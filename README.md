@@ -6,6 +6,13 @@
 
 ## 当前版本
 
+当前版本采用“全站可见，但不是全站可玩”的软解锁策略：
+
+- **已开放副本 4 个**：INFJ / INTJ / INFP / ENTP；
+- **档案预告 12 个**：其余人格展示副本名、Boss、简介和“想玩这个”按钮；
+- 不登录、不收费、不强制分享；
+- 结果页会展示“完整死亡档案”和“副本推荐已解锁”，引导用户自然回到大厅继续玩。
+
 当前 MVP 已包含 4 个首发人格副本：
 
 - **INFJ：挽回 INFJ 挑战**（已升级为叙事样板副本）
@@ -122,6 +129,7 @@ MBTI/
     GAME_DESIGN_BIBLE.md
     STEREOTYPE_RESEARCH_FRAMEWORK.md
     INFJ_NARRATIVE_SCRIPT.md
+    SOFT_UNLOCK_GROWTH_STRATEGY.md
   src/
     components/
       ChatBubble.tsx
@@ -150,11 +158,12 @@ MBTI/
 ## 核心玩法
 
 ```text
-首页选择人格 Boss
+首页双入口：知道类型 / 不知道类型先测
   ↓
-进入对应人格副本
+进入副本大厅
   ↓
-阅读关系场景
+已开放副本：直接挑战
+档案预告：记录“想玩这个”呼声
   ↓
 选择回应方式
   ↓
@@ -162,6 +171,8 @@ INFJ：系统记录变量、flag 和旧模式
 其他人格：选错死亡，选对进入下一关
   ↓
 生成死亡报告 / 残血结局 / 通关结局
+  ↓
+结果页解锁完整死亡档案与推荐副本
 ```
 
 ## 内容扩展方式
@@ -187,7 +198,9 @@ src/data/<type>Narrative.ts
 - 难度；
 - 通关率；
 - 标签；
-- 视觉渐变。
+- 视觉渐变；
+- 释放状态：sample / open / preview / hidden；
+- 软解锁提示。
 
 普通 `challenges.ts` 负责基础题目内容；叙事副本题目额外支持：
 
@@ -208,6 +221,7 @@ docs/PROJECT_DOCUMENTATION.md
 docs/GAME_DESIGN_BIBLE.md
 docs/STEREOTYPE_RESEARCH_FRAMEWORK.md
 docs/INFJ_NARRATIVE_SCRIPT.md
+docs/SOFT_UNLOCK_GROWTH_STRATEGY.md
 ```
 
 ## 免责声明
