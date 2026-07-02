@@ -21,13 +21,62 @@ export interface ChatMessage {
   content: string;
 }
 
+export type OptionOutcome = 'death' | 'survive' | 'damage' | 'hidden';
+
+export type BehaviorPattern =
+  | 'self_proof'
+  | 'pressure'
+  | 'avoidance'
+  | 'control'
+  | 'empathy'
+  | 'logic'
+  | 'playful'
+  | 'attack'
+  | 'surrender'
+  | 'boundary';
+
+export interface PlayerState {
+  empathy: number;
+  pressure: number;
+  selfProof: number;
+  control: number;
+  avoidance: number;
+  logic: number;
+  playfulness: number;
+  trust: number;
+  damage: number;
+  emotionalSafety: number;
+  oldPatternDetected: number;
+  boundaryRespect: number;
+  flags: string[];
+}
+
+export type NumericPlayerState = Omit<PlayerState, 'flags'>;
+
 export interface ChallengeOption {
   id: 'A' | 'B' | 'C' | 'D';
   text: string;
-  isCorrect: boolean;
+
+  /** Legacy MVP support. New narrative challenges should prefer outcome. */
+  isCorrect?: boolean;
+
+  outcome?: OptionOutcome;
+  pattern?: BehaviorPattern;
+  effects?: Partial<NumericPlayerState>;
+  targetReaction?: string;
+  systemComment?: string;
+  followUp?: string;
+  addFlags?: string[];
+
   deathTitle?: string;
   deathReport?: string;
   deathRate?: string;
+}
+
+export interface ConditionalLine {
+  whenFlags?: string[];
+  when?: Partial<Record<keyof NumericPlayerState, number>>;
+  content: string;
 }
 
 export interface ChallengeQuestion {
@@ -39,6 +88,15 @@ export interface ChallengeQuestion {
   question: string;
   options: ChallengeOption[];
   successText: string;
+  conditionalLines?: ConditionalLine[];
+}
+
+export interface ChoiceFeedback {
+  targetReaction: string;
+  systemComment: string;
+  followUp?: string;
+  pattern?: BehaviorPattern;
+  outcome: OptionOutcome;
 }
 
 export interface ChallengeResult {
@@ -51,4 +109,9 @@ export interface ChallengeResult {
   deathRate?: string;
   correctCount: number;
   totalCount: number;
+  endingTitle?: string;
+  endingReport?: string;
+  grade?: string;
+  stateSummary?: string[];
+  flags?: string[];
 }
