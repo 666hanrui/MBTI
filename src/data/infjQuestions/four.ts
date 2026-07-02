@@ -3,72 +3,72 @@ import type { ChallengeQuestion } from '../../types';
 export const infjQuestionFour: ChallengeQuestion = {
   id: 'infj-narrative-4',
   level: 4,
-  title: '旧伤回流',
-  scene: '暂停之后，TA 没有直接聊复合，而是提起一件你以为早就过去的小事。',
+  title: '她提起上一次',
+  scene: '第二天她愿意继续聊，但没有从昨天那件事开始，而是提到了之前一件类似的小事。',
   messages: [
-    { role: 'target', content: '其实那件事我到现在还会想起来。' },
-    { role: 'target', content: '我知道你可能觉得它很小。' }
+    { role: 'target', content: '其实也不是第一次了。' },
+    { role: 'target', content: '上次我在楼下等你，你也是快到点才说来不了。' }
   ],
   conditionalLines: [
-    { whenFlags: ['fake_boundary'], content: '隐藏台词：TA 补了一句：“就像刚才，你说不逼我，但我还是收到了一整段解释。”' },
-    { whenFlags: ['punitive_withdrawal'], content: '隐藏台词：TA 说：“你消失的时候，我不知道那是尊重，还是又一次惩罚。”' },
-    { whenFlags: ['respected_space'], content: '隐藏台词：TA 说：“刚才你真的停下来了，所以我才愿意继续说。”' }
+    { whenFlags: ['fake_boundary'], content: '她又说：“就像昨天，你说最后一句，后面还是发了很多。”' },
+    { whenFlags: ['punitive_withdrawal'], content: '她说：“我也不知道你不找我是尊重我，还是在等我先低头。”' },
+    { whenFlags: ['respected_space'], content: '她补了一句：“昨天你真的没继续发，我才觉得可以接着说。”' }
   ],
-  question: '旧事被提起时，你怎么回应？',
+  question: '她提起之前的事，你怎么回？',
   options: [
     {
       id: 'A',
-      text: '怎么又翻旧账？那都多久以前了。',
+      text: '你怎么又提这个？上次不是已经过去了吗？',
       outcome: 'death',
       pattern: 'attack',
       effects: { damage: 3, emotionalSafety: -3, oldPatternDetected: 2 },
-      targetReaction: 'TA 像是终于确认了什么，只回：“嗯，我明白了。”',
-      systemComment: '系统识别：旧账羞辱。你把未修复的伤口，判成了 TA 的小气。',
-      followUp: '死亡条件触发：你嫌 TA 记得太久，TA 只会确认你从来没懂。',
-      deathTitle: '旧账羞辱',
-      deathReport: 'TA 不是在翻旧账，是在指出那件事从来没有被真正接住。你一句“多久以前了”，把门往里又推了一寸。',
+      targetReaction: '她回：“好，那不说了。”',
+      systemComment: '这句话太像现实里的关门声了。你一说“又提”，她后面就很难再讲。',
+      followUp: '对她来说，那件事不是旧账，是同一种感觉又出现了一次。',
+      deathTitle: '一句“又提”把门关上',
+      deathReport: '你以为她在翻旧账，其实她是在说“我不是只因为这一次难受”。你把它叫成旧事，她就更确定你没有把它当回事。',
       deathRate: '44%',
       addFlags: ['old_wound_shamed']
     },
     {
       id: 'B',
-      text: '我以前可能真的把它看轻了。你愿意说说它现在还怎么影响你吗？',
+      text: '我之前确实没当回事。你不是只气昨天，是这几次加起来都让你不舒服。',
       outcome: 'survive',
       pattern: 'empathy',
       effects: { empathy: 2, trust: 2, emotionalSafety: 2, oldPatternDetected: -1 },
-      targetReaction: 'TA 停了很久，说：“我不是想让你补偿，我只是想让你知道它没有过去。”',
-      systemComment: '系统识别：旧伤承认。你没有急着翻篇，也没有把 TA 的记忆当成罪证。',
-      followUp: '后续影响：信任回升。第 5 关将进入最终观察期判定。',
+      targetReaction: '她回：“嗯，就是这种感觉。”',
+      systemComment: '这句不夸张，但很有效：你承认这是连续的，不是把她说成小题大做。',
+      followUp: '她会更愿意继续说，因为你没有急着把过去切掉。',
       addFlags: ['old_wound_acknowledged']
     },
     {
       id: 'C',
-      text: '那我还能怎么办？我也不能穿越回去改啊。',
+      text: '那你想让我怎么办？我也不能回到上次重新来。',
       outcome: 'damage',
       pattern: 'self_proof',
       effects: { selfProof: 2, damage: 2, oldPatternDetected: 1, emotionalSafety: -1 },
-      targetReaction: 'TA 回：“我不是在要你穿越。”这句话很轻，但关系又冷了一点。',
-      systemComment: '系统识别：无力感甩锅。你把修复问题变成 TA 在为难你。',
-      followUp: '后续影响：旧模式累计。如果前面已经多次自证，最终可能进入残血结局。',
-      deathTitle: '无力感甩锅',
-      deathReport: 'TA 还没开始讲，你已经把自己放到受害者位置。',
+      targetReaction: '她回：“我不是让你穿越。”语气又淡下来了。',
+      systemComment: '这句话也很像真人会说，但它会把她的问题变成“你在为难我”。',
+      followUp: '后面如果你再这样回，结局很可能只是残血，不是真通过。',
+      deathTitle: '把修复说成没办法',
+      deathReport: '她不是要你回到过去，她是想知道你现在有没有真的看见。你一说“那我怎么办”，她就又要反过来安抚你。',
       deathRate: '27%',
       addFlags: ['helpless_defense']
     },
     {
       id: 'D',
-      text: '我们别一直讲难过的了，我带你去吃点好的，换换心情。',
+      text: '别想这些了，今天我请你喝奶茶，咱们开心点。',
       outcome: 'hidden',
       pattern: 'avoidance',
       effects: { avoidance: 2, playfulness: 1, damage: 1, emotionalSafety: -1 },
-      targetReaction: 'TA 没有生气，只是说：“你看，你还是想快点跳过去。”',
-      systemComment: '系统识别：轻飘飘跳过。你想让空气变轻，但沉重的东西又一次没人接。',
-      followUp: '隐藏污染：如果最终没有具体行动，会触发“温柔但无交付”。',
-      deathTitle: '轻飘飘跳过',
-      deathReport: '你递出的是转移注意力，不是修复。TA 不缺一顿饭，TA 缺一个愿意停下来看伤口的人。',
+      targetReaction: '她回：“我不是想喝奶茶。”',
+      systemComment: '这句很生活，但也很容易踩坑。你想缓和气氛，她会觉得你又想跳过去。',
+      followUp: '后面如果没有真正改动作，补偿会变成“哄一下就算了”。',
+      deathTitle: '想哄过去',
+      deathReport: '奶茶可以喝，但不能替代认真听。她要的不是今天开心一点，是以后别再一次次让她自己消化。',
       deathRate: '21%',
       addFlags: ['skipped_the_weight']
     }
   ],
-  successText: '你活过了第四关。系统提示：旧伤不是旧账，是未完成的修复任务。'
+  successText: '这一关要像人，但不能滑过去。人会说错话，所以选项里保留了真实的错法。'
 };
