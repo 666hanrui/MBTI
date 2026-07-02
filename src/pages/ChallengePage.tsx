@@ -63,7 +63,7 @@ export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
 
   if (!questions || questions.length === 0) {
     return (
-      <main className="min-h-screen flex flex-col items-center justify-center p-6 bg-zinc-950 text-white text-center space-y-6">
+      <main className="h-[100dvh] max-h-[100dvh] overflow-hidden flex flex-col items-center justify-center p-6 bg-zinc-950 text-white text-center space-y-6">
         <h1 className="text-4xl font-black text-red-500">404 NOT FOUND</h1>
         <p className="text-zinc-400">「{personality?.bossName || type}」副本还在紧急施工中，<br/>先去隔壁挑战其他受害者吧。</p>
         <button onClick={onBack} className="px-6 py-2 rounded-full border border-zinc-700 hover:bg-zinc-800 transition">
@@ -185,7 +185,7 @@ export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
   const stageName = stageNames[currentIndex] ?? '未知';
 
   return (
-    <main className={`min-h-screen flex flex-col ${shakeClass}`} style={{ background: 'transparent' }}>
+    <main className={`h-[100dvh] max-h-[100dvh] overflow-hidden flex flex-col ${shakeClass}`} style={{ background: 'transparent' }}>
       {/* WeChat-style header */}
       <header className="sticky top-0 z-40 px-4 py-3 flex items-center gap-3" style={{ background: 'linear-gradient(180deg, rgba(20,20,35,0.98), rgba(15,15,25,0.95))', borderBottom: '1px solid rgba(255,255,255,0.06)', backdropFilter: 'blur(20px)' }}>
         <button type="button" onClick={onBack} className="text-white/50 hover:text-white text-sm shrink-0">← 退出</button>
@@ -195,7 +195,7 @@ export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
       </header>
 
       {/* Chat area */}
-      <div className="flex-1 overflow-y-auto px-4 py-5 space-y-4">
+      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 space-y-3">
         {/* Stage indicator */}
         <div className="flex justify-center mb-4">
           <div className="px-4 py-1.5 rounded-full text-[11px] text-white/40 bg-white/[0.04] border border-white/[0.06]">
@@ -284,7 +284,7 @@ export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          className="sticky bottom-0 px-4 py-4 space-y-2"
+          className="shrink-0 px-4 py-3 space-y-2"
           style={{ background: 'linear-gradient(180deg, transparent, rgba(10,10,15,0.95) 30%)', paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
         >
           <p className="text-xs text-white/40 text-center mb-2 font-bold">💬 {question.question}</p>

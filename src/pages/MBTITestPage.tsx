@@ -40,7 +40,7 @@ export function MBTITestPage({ username, onComplete }: MBTITestPageProps) {
 
   if (result) {
     return (
-      <div className="relative min-h-screen w-full bg-zinc-950 flex flex-col items-center justify-center p-6 text-white overflow-hidden">
+      <div className="relative h-[100dvh] max-h-[100dvh] w-full bg-zinc-950 flex flex-col items-center justify-center p-6 text-white overflow-hidden">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -65,7 +65,7 @@ export function MBTITestPage({ username, onComplete }: MBTITestPageProps) {
   }
 
   return (
-    <div className="relative min-h-screen w-full bg-zinc-950 flex flex-col items-center justify-center p-6 text-white overflow-hidden">
+    <div className="relative h-[100dvh] max-h-[100dvh] w-full bg-zinc-950 flex flex-col items-center justify-center p-6 text-white overflow-hidden">
       {/* 进度条 */}
       <div className="absolute top-0 left-0 w-full h-1 bg-zinc-900">
         <motion.div

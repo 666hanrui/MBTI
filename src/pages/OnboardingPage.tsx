@@ -20,7 +20,7 @@ export function OnboardingPage({ onComplete, onRequestTest }: OnboardingPageProp
   };
 
   return (
-    <div className="relative min-h-screen w-full bg-zinc-950 flex flex-col items-center justify-center p-6 text-white overflow-hidden">
+    <div className="relative h-[100dvh] max-h-[100dvh] w-full bg-zinc-950 flex flex-col items-center justify-center p-6 text-white overflow-hidden">
       {/* 赛博朋克背景光晕 */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-600/20 rounded-full blur-[120px] pointer-events-none" />
@@ -98,7 +98,7 @@ export function OnboardingPage({ onComplete, onRequestTest }: OnboardingPageProp
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="w-full max-w-lg flex flex-col items-center z-10 h-[80vh]"
+            className="w-full max-w-lg flex flex-col items-center z-10 h-[80dvh]"
           >
             <h2 className="text-xl font-black mb-6 text-center text-zinc-400">
               请选择你的主导人格
