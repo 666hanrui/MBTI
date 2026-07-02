@@ -1,0 +1,2607 @@
+{
+  "source": "https://www.apesk.com/p/main0519.asp",
+  "scraped_at": "2026-07-02T15:33:09.555867+00:00",
+  "question_count": 104,
+  "questions": [
+    {
+      "number": 1,
+      "set": "set1",
+      "statement": "认识你的人倾向形容你为",
+      "left_label": "逻辑和明确",
+      "right_label": "温情而感性",
+      "answer_mapping": {
+        "1": "逻辑和明确",
+        "0": "温情而感性",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set1",
+        "setA1",
+        "inactive"
+      ]
+    },
+    {
+      "number": 2,
+      "set": "set1",
+      "statement": "你喜欢......",
+      "left_label": "有部署、有节奏的工作",
+      "right_label": "有灵活性、较为松散的工作",
+      "answer_mapping": {
+        "1": "有部署、有节奏的工作",
+        "0": "有灵活性、较为松散的工作",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set1",
+        "setA2",
+        "inactive"
+      ]
+    },
+    {
+      "number": 3,
+      "set": "set1",
+      "statement": "你乐于拥有广泛的人际圈",
+      "left_label": "是的",
+      "right_label": "如果可以选择的话，我更愿意一个人静静呆着",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "如果可以选择的话，我更愿意一个人静静呆着",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set1",
+        "setA3",
+        "inactive"
+      ]
+    },
+    {
+      "number": 4,
+      "set": "set1",
+      "statement": "你看肥皂剧的时候会很投入",
+      "left_label": "是的",
+      "right_label": "不会",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不会",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set1",
+        "setA4",
+        "inactive"
+      ]
+    },
+    {
+      "number": 5,
+      "set": "set1",
+      "statement": "对于突发性事件，你习惯快速做出回应",
+      "left_label": "是的",
+      "right_label": "不会",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不会",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set1",
+        "setA5",
+        "inactive"
+      ]
+    },
+    {
+      "number": 6,
+      "set": "set1",
+      "statement": "热衷于猎奇和掌握新概念",
+      "left_label": "是的",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set1",
+        "setA6",
+        "inactive"
+      ]
+    },
+    {
+      "number": 7,
+      "set": "set2",
+      "statement": "当受到情感上的伤害或挫折时",
+      "left_label": "虽然你觉得受伤，但一旦想通，就会很快从阴影中走出来",
+      "right_label": "你通常让自己的情绪深陷其中，很难走出来",
+      "answer_mapping": {
+        "1": "虽然你觉得受伤，但一旦想通，就会很快从阴影中走出来",
+        "0": "你通常让自己的情绪深陷其中，很难走出来",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set2",
+        "setA7",
+        "inactive"
+      ]
+    },
+    {
+      "number": 8,
+      "set": "set2",
+      "statement": "你选择的生活充满着......",
+      "left_label": "自然发生和弹性",
+      "right_label": "日程表和组织",
+      "answer_mapping": {
+        "1": "自然发生和弹性",
+        "0": "日程表和组织",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set2",
+        "setA8",
+        "inactive"
+      ]
+    },
+    {
+      "number": 9,
+      "set": "set2",
+      "statement": "在同学聚会中，你通常",
+      "left_label": "较安静并保留，直到你觉得舒服",
+      "right_label": "整体来说很健谈",
+      "answer_mapping": {
+        "1": "较安静并保留，直到你觉得舒服",
+        "0": "整体来说很健谈",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set2",
+        "setA9",
+        "inactive"
+      ]
+    },
+    {
+      "number": 10,
+      "set": "set2",
+      "statement": "当你对一个朋友放松聊天时，你偏向谈论",
+      "left_label": "实际的、具体的、关于\"此时此地\"的事物。例如，你也许会谈论即将要参加的旅程",
+      "right_label": "未来，关于改进或发明事物和生活的种种可能性。例如，你也许会谈论一个新的科学发明",
+      "answer_mapping": {
+        "1": "实际的、具体的、关于\"此时此地\"的事物。例如，你也许会谈论即将要参加的旅程",
+        "0": "未来，关于改进或发明事物和生活的种种可能性。例如，你也许会谈论一个新的科学发明",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set2",
+        "setA10",
+        "inactive"
+      ]
+    },
+    {
+      "number": 11,
+      "set": "set2",
+      "statement": "你经常考虑人类及其命运问题",
+      "left_label": "是的",
+      "right_label": "不会",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不会",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set2",
+        "setA11",
+        "inactive"
+      ]
+    },
+    {
+      "number": 12,
+      "set": "set2",
+      "statement": "你有时候会心血来潮做一件事情",
+      "left_label": "是的",
+      "right_label": "极少会这样",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "极少会这样",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set2",
+        "setA12",
+        "inactive"
+      ]
+    },
+    {
+      "number": 13,
+      "set": "set3",
+      "statement": "倾听朋友说话时，你更容易察觉到",
+      "left_label": "当ta不合逻辑时",
+      "right_label": "当ta需要情感上的支持时",
+      "answer_mapping": {
+        "1": "当ta不合逻辑时",
+        "0": "当ta需要情感上的支持时",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set3",
+        "setA13",
+        "inactive"
+      ]
+    },
+    {
+      "number": 14,
+      "set": "set3",
+      "statement": "你喜欢立刻行动而不习惯对各种选择进行反复斟酌",
+      "left_label": "是的",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set3",
+        "setA14",
+        "inactive"
+      ]
+    },
+    {
+      "number": 15,
+      "set": "set3",
+      "statement": "我更容易被认为是一个",
+      "left_label": "很理性的人",
+      "right_label": "很感性的人",
+      "answer_mapping": {
+        "1": "很理性的人",
+        "0": "很感性的人",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set3",
+        "setA15",
+        "inactive"
+      ]
+    },
+    {
+      "number": 16,
+      "set": "set3",
+      "statement": "如你有一个约见，你是习惯临场发挥还是事先周密准备",
+      "left_label": "随机应变，临场发挥",
+      "right_label": "不周密准备我不安心",
+      "answer_mapping": {
+        "1": "随机应变，临场发挥",
+        "0": "不周密准备我不安心",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set3",
+        "setA16",
+        "inactive"
+      ]
+    },
+    {
+      "number": 17,
+      "set": "set3",
+      "statement": "业余时间里你常与一群人积极交往，参加聚会、一起购物",
+      "left_label": "是的",
+      "right_label": "不，我独自呆着比较舒服",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不，我独自呆着比较舒服",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set3",
+        "setA17",
+        "inactive"
+      ]
+    },
+    {
+      "number": 18,
+      "set": "set3",
+      "statement": "朋友邀请你本周末晚上聚餐，并且在前一天才通知，你会",
+      "left_label": "先想想本周末的计划安排",
+      "right_label": "立即爽快答应",
+      "answer_mapping": {
+        "1": "先想想本周末的计划安排",
+        "0": "立即爽快答应",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set3",
+        "setA18",
+        "inactive"
+      ]
+    },
+    {
+      "number": 19,
+      "set": "set4",
+      "statement": "与朋友交往时，你倾向于看重",
+      "left_label": "情感上的相容性：对对方情感上的需求很敏感",
+      "right_label": "智慧上的相容性：沟通重要的想法；客观地讨论和辩论事情",
+      "answer_mapping": {
+        "1": "情感上的相容性：对对方情感上的需求很敏感",
+        "0": "智慧上的相容性：沟通重要的想法；客观地讨论和辩论事情",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set4",
+        "setA19",
+        "inactive"
+      ]
+    },
+    {
+      "number": 20,
+      "set": "set4",
+      "statement": "哪种更符合你......",
+      "left_label": "开放而热烈的，渴望挑战自己",
+      "right_label": "内心保守而传统",
+      "answer_mapping": {
+        "1": "开放而热烈的，渴望挑战自己",
+        "0": "内心保守而传统",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set4",
+        "setA20",
+        "inactive"
+      ]
+    },
+    {
+      "number": 21,
+      "set": "set4",
+      "statement": "当遇到聚会中第一次见面的人对你很热情时，你会",
+      "left_label": "很高兴，情绪会受到感染，并对其产生好感",
+      "right_label": "热情应付，但心存一丝疑虑：对方为什么要这样热情，是否有其他目的",
+      "answer_mapping": {
+        "1": "很高兴，情绪会受到感染，并对其产生好感",
+        "0": "热情应付，但心存一丝疑虑：对方为什么要这样热情，是否有其他目的",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set4",
+        "setA21",
+        "inactive"
+      ]
+    },
+    {
+      "number": 22,
+      "set": "set4",
+      "statement": "你懂得如何把每分每秒都花得有意义",
+      "left_label": "是的",
+      "right_label": "不习惯计划时间，喜欢随心所欲",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不习惯计划时间，喜欢随心所欲",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set4",
+        "setA22",
+        "inactive"
+      ]
+    },
+    {
+      "number": 23,
+      "set": "set4",
+      "statement": "总体而言，你是一个在交流时有些保守和有距离感的人",
+      "left_label": "是的",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set4",
+        "setA23",
+        "inactive"
+      ]
+    },
+    {
+      "number": 24,
+      "set": "set4",
+      "statement": "你时常容易流露和说出你的感觉和感情",
+      "left_label": "是的",
+      "right_label": "不易流露感情",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不易流露感情",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set4",
+        "setA24",
+        "inactive"
+      ]
+    },
+    {
+      "number": 25,
+      "set": "set5",
+      "statement": "经过冗长的社交之后，你会想要离开，独处一下",
+      "left_label": "是的，我常有这样的感觉",
+      "right_label": "没有这种体会",
+      "answer_mapping": {
+        "1": "是的，我常有这样的感觉",
+        "0": "没有这种体会",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set5",
+        "setA25",
+        "inactive"
+      ]
+    },
+    {
+      "number": 26,
+      "set": "set5",
+      "statement": "你常会站在对方角度去思考而模糊了自己的立场",
+      "left_label": "是的",
+      "right_label": "不会",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不会",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set5",
+        "setA26",
+        "inactive"
+      ]
+    },
+    {
+      "number": 27,
+      "set": "set5",
+      "statement": "你容易看出具体事件背后的普遍原理",
+      "left_label": "是的",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set5",
+        "setA27",
+        "inactive"
+      ]
+    },
+    {
+      "number": 28,
+      "set": "set5",
+      "statement": "当要去见陌生人时，我通常",
+      "left_label": "多少有些不情愿",
+      "right_label": "不感到难为情",
+      "answer_mapping": {
+        "1": "多少有些不情愿",
+        "0": "不感到难为情",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set5",
+        "setA28",
+        "inactive"
+      ]
+    },
+    {
+      "number": 29,
+      "set": "set5",
+      "statement": "你倾向通过以下哪种方式收集信息",
+      "left_label": "你对目前状况的实际认知",
+      "right_label": "你对有可能发生之事的想象和期望",
+      "answer_mapping": {
+        "1": "你对目前状况的实际认知",
+        "0": "你对有可能发生之事的想象和期望",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set5",
+        "setA29",
+        "inactive"
+      ]
+    },
+    {
+      "number": 30,
+      "set": "set5",
+      "statement": "对于应酬中逢场作戏、聪明圆融的人，你的看法是",
+      "left_label": "情感上无法接受，无法接受人们快速地相熟热络，而又骨底淡薄",
+      "right_label": "看应酬的目的是什么，只要目的是有益的，这些也都无所谓了",
+      "answer_mapping": {
+        "1": "情感上无法接受，无法接受人们快速地相熟热络，而又骨底淡薄",
+        "0": "看应酬的目的是什么，只要目的是有益的，这些也都无所谓了",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set5",
+        "setA30",
+        "inactive"
+      ]
+    },
+    {
+      "number": 31,
+      "set": "set6",
+      "statement": "你倾向如此做决定......",
+      "left_label": "首先依你的逻辑，然后依你的心意",
+      "right_label": "首先依你的心意，然后依你的逻辑",
+      "answer_mapping": {
+        "1": "首先依你的逻辑，然后依你的心意",
+        "0": "首先依你的心意，然后依你的逻辑",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set6",
+        "setA31",
+        "inactive"
+      ]
+    },
+    {
+      "number": 32,
+      "set": "set6",
+      "statement": "大多数时候，你宁可看一本书，也不愿意出去参加聚会",
+      "left_label": "是的",
+      "right_label": "我喜欢参加聚会",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "我喜欢参加聚会",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set6",
+        "setA32",
+        "inactive"
+      ]
+    },
+    {
+      "number": 33,
+      "set": "set6",
+      "statement": "大多数时候，你倾向于......",
+      "left_label": "随机应变",
+      "right_label": "事先计划",
+      "answer_mapping": {
+        "1": "随机应变",
+        "0": "事先计划",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set6",
+        "setA33",
+        "inactive"
+      ]
+    },
+    {
+      "number": 34,
+      "set": "set6",
+      "statement": "你倾向从何处得到力量......",
+      "left_label": "朋友",
+      "right_label": "自己的想法",
+      "answer_mapping": {
+        "1": "朋友",
+        "0": "自己的想法",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set6",
+        "setA34",
+        "inactive"
+      ]
+    },
+    {
+      "number": 35,
+      "set": "set6",
+      "statement": "当你不同意朋友的想法时",
+      "left_label": "你尽可能地避免伤害对方的感情；若是会对对方造成伤害的话，你就不会说",
+      "right_label": "你通常毫无保留地说话，并且对朋友直言不讳，因为对的就是对的",
+      "answer_mapping": {
+        "1": "你尽可能地避免伤害对方的感情；若是会对对方造成伤害的话，你就不会说",
+        "0": "你通常毫无保留地说话，并且对朋友直言不讳，因为对的就是对的",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set6",
+        "setA35",
+        "inactive"
+      ]
+    },
+    {
+      "number": 36,
+      "set": "set6",
+      "statement": "我常看到感人的电视或电影情景看到泪流不止",
+      "left_label": "是的",
+      "right_label": "我很少因为这样的事情哭。只有在特别伤心的事发生在自己身上时才会哭",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "我很少因为这样的事情哭。只有在特别伤心的事发生在自己身上时才会哭",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set6",
+        "setA36",
+        "inactive"
+      ]
+    },
+    {
+      "number": 37,
+      "set": "set7",
+      "statement": "你更喜欢远离外界的喧嚣",
+      "left_label": "是的",
+      "right_label": "不，我喜欢热闹",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不，我喜欢热闹",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set7",
+        "setA37",
+        "inactive"
+      ]
+    },
+    {
+      "number": 38,
+      "set": "set7",
+      "statement": "当不得不主动同生人打交道时，我",
+      "left_label": "有点儿担心别人不愿被打搅",
+      "right_label": "感到自信并且轻松",
+      "answer_mapping": {
+        "1": "有点儿担心别人不愿被打搅",
+        "0": "感到自信并且轻松",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set7",
+        "setA38",
+        "inactive"
+      ]
+    },
+    {
+      "number": 39,
+      "set": "set7",
+      "statement": "你是一个时间观念很强的人",
+      "left_label": "是的",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set7",
+        "setA39",
+        "inactive"
+      ]
+    },
+    {
+      "number": 40,
+      "set": "set7",
+      "statement": "脑海里常冒出一些新点子",
+      "left_label": "是的",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set7",
+        "setA40",
+        "inactive"
+      ]
+    },
+    {
+      "number": 41,
+      "set": "set7",
+      "statement": "当和朋友约定好见面",
+      "left_label": "若你所约的人来迟了，你会很不高兴",
+      "right_label": "一点儿都不在乎，因为你自己常常迟到",
+      "answer_mapping": {
+        "1": "若你所约的人来迟了，你会很不高兴",
+        "0": "一点儿都不在乎，因为你自己常常迟到",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set7",
+        "setA41",
+        "inactive"
+      ]
+    },
+    {
+      "number": 42,
+      "set": "set7",
+      "statement": "把事物收拾得有条理，你就会感到高兴",
+      "left_label": "是的",
+      "right_label": "不，我习惯自由自在和随意",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不，我习惯自由自在和随意",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set7",
+        "setA42",
+        "inactive"
+      ]
+    },
+    {
+      "number": 43,
+      "set": "set8",
+      "statement": "你倾向拥有......",
+      "left_label": "很多认识的人和大把的朋友",
+      "right_label": "少数很亲密的朋友或和可以深度交流的人",
+      "answer_mapping": {
+        "1": "很多认识的人和大把的朋友",
+        "0": "少数很亲密的朋友或和可以深度交流的人",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set8",
+        "setA43",
+        "inactive"
+      ]
+    },
+    {
+      "number": 44,
+      "set": "set8",
+      "statement": "你能够很好的控制自己的欲望和外部诱惑",
+      "left_label": "是的",
+      "right_label": "更多时候我会不由自主",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "更多时候我会不由自主",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set8",
+        "setA44",
+        "inactive"
+      ]
+    },
+    {
+      "number": 45,
+      "set": "set8",
+      "statement": "哪种更符合你",
+      "left_label": "喜欢发掘新点子",
+      "right_label": "不善于此",
+      "answer_mapping": {
+        "1": "喜欢发掘新点子",
+        "0": "不善于此",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set8",
+        "setA45",
+        "inactive"
+      ]
+    },
+    {
+      "number": 46,
+      "set": "set8",
+      "statement": "刷短视频时，你更倾向看于哪种内容",
+      "left_label": "喜欢关注那些分享前沿科技、未来趋势或者哲学思考的帐号，我对探索新概念、理论和创新想法感兴趣",
+      "right_label": "喜欢浏览实用的生活小技巧、美食制作教程或者旅行日志等具体实际的内容",
+      "answer_mapping": {
+        "1": "喜欢关注那些分享前沿科技、未来趋势或者哲学思考的帐号，我对探索新概念、理论和创新想法感兴趣",
+        "0": "喜欢浏览实用的生活小技巧、美食制作教程或者旅行日志等具体实际的内容",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set8",
+        "setA46",
+        "inactive"
+      ]
+    },
+    {
+      "number": 47,
+      "set": "set8",
+      "statement": "碰到一般熟的人，下意识躲避",
+      "left_label": "常常这样",
+      "right_label": "不常这样",
+      "answer_mapping": {
+        "1": "常常这样",
+        "0": "不常这样",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set8",
+        "setA47",
+        "inactive"
+      ]
+    },
+    {
+      "number": 48,
+      "set": "set8",
+      "statement": "哪种更符合你......",
+      "left_label": "我很少质询和指责他人，更愿意做一个随和与包容的人",
+      "right_label": "我不想充当老好人，发现他人犯错就会直言不讳指出来",
+      "answer_mapping": {
+        "1": "我很少质询和指责他人，更愿意做一个随和与包容的人",
+        "0": "我不想充当老好人，发现他人犯错就会直言不讳指出来",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set8",
+        "setA48",
+        "inactive"
+      ]
+    },
+    {
+      "number": 49,
+      "set": "set9",
+      "statement": "解决问题的时候，比起用新的方法，你更愿意用熟悉的方法解决",
+      "left_label": "是的",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set9",
+        "setA49",
+        "inactive"
+      ]
+    },
+    {
+      "number": 50,
+      "set": "set9",
+      "statement": "你的内心渴望一次冒险",
+      "left_label": "是的",
+      "right_label": "没有",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "没有",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set9",
+        "setA50",
+        "inactive"
+      ]
+    },
+    {
+      "number": 51,
+      "set": "set9",
+      "statement": "下面哪个更符合你",
+      "left_label": "在不与人接触的场合，我充满了生命的愉悦",
+      "right_label": "哪怕喧嚣嘈杂一点，也比一个人孤伶伶呆着强",
+      "answer_mapping": {
+        "1": "在不与人接触的场合，我充满了生命的愉悦",
+        "0": "哪怕喧嚣嘈杂一点，也比一个人孤伶伶呆着强",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set9",
+        "setA51",
+        "inactive"
+      ]
+    },
+    {
+      "number": 52,
+      "set": "set9",
+      "statement": "你发现很难谈论自己的情感",
+      "left_label": "是这样",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是这样",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set9",
+        "setA52",
+        "inactive"
+      ]
+    },
+    {
+      "number": 53,
+      "set": "set9",
+      "statement": "对我更具吸引力的人是",
+      "left_label": "聪明而反应敏捷的人",
+      "right_label": "稳重而脚踏实地的人",
+      "answer_mapping": {
+        "1": "聪明而反应敏捷的人",
+        "0": "稳重而脚踏实地的人",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set9",
+        "setA53",
+        "inactive"
+      ]
+    },
+    {
+      "number": 54,
+      "set": "set9",
+      "statement": "你倾向于凡事都持科学的态度",
+      "left_label": "是的",
+      "right_label": "不是，我比较感性",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是，我比较感性",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set9",
+        "setA54",
+        "inactive"
+      ]
+    },
+    {
+      "number": 55,
+      "set": "set10",
+      "statement": "当你考虑一件事情时，你很少想到事情可能的发展，而是更多关注目的",
+      "left_label": "是这样",
+      "right_label": "不是，我更容易陷入对未来可能性的推测中",
+      "answer_mapping": {
+        "1": "是这样",
+        "0": "不是，我更容易陷入对未来可能性的推测中",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set10",
+        "setA55",
+        "inactive"
+      ]
+    },
+    {
+      "number": 56,
+      "set": "set10",
+      "statement": "你容易被强烈的情感影响",
+      "left_label": "是这样",
+      "right_label": "不会",
+      "answer_mapping": {
+        "1": "是这样",
+        "0": "不会",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set10",
+        "setA56",
+        "inactive"
+      ]
+    },
+    {
+      "number": 57,
+      "set": "set10",
+      "statement": "比起事前的计划，你的决定大多基于瞬间的感觉",
+      "left_label": "是的",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set10",
+        "setA57",
+        "inactive"
+      ]
+    },
+    {
+      "number": 58,
+      "set": "set10",
+      "statement": "你喜欢一个人独自享受空闲时光，或者在安静的家庭环境中放松",
+      "left_label": "是这样",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是这样",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set10",
+        "setA58",
+        "inactive"
+      ]
+    },
+    {
+      "number": 59,
+      "set": "set10",
+      "statement": "安定的生活方式让你觉得更自在",
+      "left_label": "是的",
+      "right_label": "不，我反感一成不变的生活",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不，我反感一成不变的生活",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set10",
+        "setA59",
+        "inactive"
+      ]
+    },
+    {
+      "number": 60,
+      "set": "set10",
+      "statement": "大多数时候，你是这种人......",
+      "left_label": "喜欢先纵观全局",
+      "right_label": "喜欢先掌握细节",
+      "answer_mapping": {
+        "1": "喜欢先纵观全局",
+        "0": "喜欢先掌握细节",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set10",
+        "setA60",
+        "inactive"
+      ]
+    },
+    {
+      "number": 61,
+      "set": "set11",
+      "statement": "你的桌子，办公台，总是整洁而规律",
+      "left_label": "是的",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set11",
+        "setA61",
+        "inactive"
+      ]
+    },
+    {
+      "number": 62,
+      "set": "set11",
+      "statement": "独自行走你会觉得舒服",
+      "left_label": "是的",
+      "right_label": "我更愿意找人聊天、参加娱乐活动",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "我更愿意找人聊天、参加娱乐活动",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set11",
+        "setA62",
+        "inactive"
+      ]
+    },
+    {
+      "number": 63,
+      "set": "set11",
+      "statement": "你倾向相信......",
+      "left_label": "你直接的观察和现成的经验",
+      "right_label": "你的直觉",
+      "answer_mapping": {
+        "1": "你直接的观察和现成的经验",
+        "0": "你的直觉",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set11",
+        "setA63",
+        "inactive"
+      ]
+    },
+    {
+      "number": 64,
+      "set": "set11",
+      "statement": "好朋友倾向对你说",
+      "left_label": "你难道不可以安静一会儿吗？",
+      "right_label": "可以请你从你的世界中出来一下吗？",
+      "answer_mapping": {
+        "1": "你难道不可以安静一会儿吗？",
+        "0": "可以请你从你的世界中出来一下吗？",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set11",
+        "setA64",
+        "inactive"
+      ]
+    },
+    {
+      "number": 65,
+      "set": "set11",
+      "statement": "你是此类型的人......",
+      "left_label": "喜欢在一段时间里专心于一件事情直到完成",
+      "right_label": "享受同时进行好几件事情",
+      "answer_mapping": {
+        "1": "喜欢在一段时间里专心于一件事情直到完成",
+        "0": "享受同时进行好几件事情",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set11",
+        "setA65",
+        "inactive"
+      ]
+    },
+    {
+      "number": 66,
+      "set": "set11",
+      "statement": "喜欢受到他人的关心",
+      "left_label": "是的，感觉旁边人在关心我的话，心情当然好咯",
+      "right_label": "不,不要过分在意我",
+      "answer_mapping": {
+        "1": "是的，感觉旁边人在关心我的话，心情当然好咯",
+        "0": "不,不要过分在意我",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set11",
+        "setA66",
+        "inactive"
+      ]
+    },
+    {
+      "number": 67,
+      "set": "set12",
+      "statement": "小时候，我更热衷于",
+      "left_label": "问为什么，或自己动手拆玩具找到其原理",
+      "right_label": "绘画和表述，描绘和描述所看到的",
+      "answer_mapping": {
+        "1": "问为什么，或自己动手拆玩具找到其原理",
+        "0": "绘画和表述，描绘和描述所看到的",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set12",
+        "setA67",
+        "inactive"
+      ]
+    },
+    {
+      "number": 68,
+      "set": "set12",
+      "statement": "我常常会急急忙忙赶一件事",
+      "left_label": "是的",
+      "right_label": "不是",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "不是",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set12",
+        "setA68",
+        "inactive"
+      ]
+    },
+    {
+      "number": 69,
+      "set": "set12",
+      "statement": "相对之下，我更欣赏",
+      "left_label": "实业家",
+      "right_label": "科学家",
+      "answer_mapping": {
+        "1": "实业家",
+        "0": "科学家",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set12",
+        "setA69",
+        "inactive"
+      ]
+    },
+    {
+      "number": 70,
+      "set": "set12",
+      "statement": "你偏好......",
+      "left_label": "事先知道约会的行程：要去哪里、有谁参加、你会在那里多久",
+      "right_label": "让约会自然地发生，不做太多事先的计划",
+      "answer_mapping": {
+        "1": "事先知道约会的行程：要去哪里、有谁参加、你会在那里多久",
+        "0": "让约会自然地发生，不做太多事先的计划",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set12",
+        "setA70",
+        "inactive"
+      ]
+    },
+    {
+      "number": 71,
+      "set": "set12",
+      "statement": "哪一项较常见",
+      "left_label": "你准时出席而其他人都迟到",
+      "right_label": "其他人都准时出席而你迟到",
+      "answer_mapping": {
+        "1": "你准时出席而其他人都迟到",
+        "0": "其他人都准时出席而你迟到",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set12",
+        "setA71",
+        "inactive"
+      ]
+    },
+    {
+      "number": 72,
+      "set": "set12",
+      "statement": "我更愿意被看作是......",
+      "left_label": "务实的人",
+      "right_label": "有想象力、有灵感的人",
+      "answer_mapping": {
+        "1": "务实的人",
+        "0": "有想象力、有灵感的人",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set12",
+        "setA72",
+        "inactive"
+      ]
+    },
+    {
+      "number": 73,
+      "set": "set13",
+      "statement": "闲暇时候，你更愿意看哪方面的书",
+      "left_label": "小说",
+      "right_label": "哲学思辨",
+      "answer_mapping": {
+        "1": "小说",
+        "0": "哲学思辨",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set13",
+        "setA73",
+        "inactive"
+      ]
+    },
+    {
+      "number": 74,
+      "set": "set13",
+      "statement": "选择较符合你的描述......",
+      "left_label": "准时的人",
+      "right_label": "闲适、悠然的人",
+      "answer_mapping": {
+        "1": "准时的人",
+        "0": "闲适、悠然的人",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set13",
+        "setA74",
+        "inactive"
+      ]
+    },
+    {
+      "number": 75,
+      "set": "set13",
+      "statement": "很容易与他人成为朋友",
+      "left_label": "是的，不管对方是谁，我都能和他和睦相处",
+      "right_label": "没有必要和所有人都成为朋友，有几个真正的知己就可以",
+      "answer_mapping": {
+        "1": "是的，不管对方是谁，我都能和他和睦相处",
+        "0": "没有必要和所有人都成为朋友，有几个真正的知己就可以",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set13",
+        "setA75",
+        "inactive"
+      ]
+    },
+    {
+      "number": 76,
+      "set": "set13",
+      "statement": "哪种描述较符合你",
+      "left_label": "如果对于一个东西没有一套合理的系统的解释，我就感觉搞不清楚，一片模糊",
+      "right_label": "享受生活和现实，给什么东西都进行抽象和解释，太累了",
+      "answer_mapping": {
+        "1": "如果对于一个东西没有一套合理的系统的解释，我就感觉搞不清楚，一片模糊",
+        "0": "享受生活和现实，给什么东西都进行抽象和解释，太累了",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set13",
+        "setA76",
+        "inactive"
+      ]
+    },
+    {
+      "number": 77,
+      "set": "set13",
+      "statement": "加班很晚回家时，哪种描述更像你",
+      "left_label": "再累也收拾整齐了再休息",
+      "right_label": "扔下包倒床就睡",
+      "answer_mapping": {
+        "1": "再累也收拾整齐了再休息",
+        "0": "扔下包倒床就睡",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set13",
+        "setA77",
+        "inactive"
+      ]
+    },
+    {
+      "number": 78,
+      "set": "set13",
+      "statement": "只要有爱，什么都可以原谅",
+      "left_label": "不认同。就算相爱，凡事都是有分寸的",
+      "right_label": "认同，爱情能冲淡一切不快",
+      "answer_mapping": {
+        "1": "不认同。就算相爱，凡事都是有分寸的",
+        "0": "认同，爱情能冲淡一切不快",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set13",
+        "setA78",
+        "inactive"
+      ]
+    },
+    {
+      "number": 79,
+      "set": "set14",
+      "statement": "喜欢清闲的生活",
+      "left_label": "是的，我喜欢轻轻松松的人生",
+      "right_label": "我喜欢有挑战的人生，不断给自己更高的目标",
+      "answer_mapping": {
+        "1": "是的，我喜欢轻轻松松的人生",
+        "0": "我喜欢有挑战的人生，不断给自己更高的目标",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set14",
+        "setA79",
+        "inactive"
+      ]
+    },
+    {
+      "number": 80,
+      "set": "set14",
+      "statement": "我喜欢一个人行动",
+      "left_label": "是的，孤独适合我",
+      "right_label": "不，不要让我孤苦伶仃一个人",
+      "answer_mapping": {
+        "1": "是的，孤独适合我",
+        "0": "不，不要让我孤苦伶仃一个人",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set14",
+        "setA80",
+        "inactive"
+      ]
+    },
+    {
+      "number": 81,
+      "set": "set14",
+      "statement": "喜欢装饰",
+      "left_label": "是，喜欢漂亮的，可爱的，华丽的",
+      "right_label": "不，服装嘛，只要有一件T恤，一条牛仔裤就足够了",
+      "answer_mapping": {
+        "1": "是，喜欢漂亮的，可爱的，华丽的",
+        "0": "不，服装嘛，只要有一件T恤，一条牛仔裤就足够了",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set14",
+        "setA81",
+        "inactive"
+      ]
+    },
+    {
+      "number": 82,
+      "set": "set14",
+      "statement": "哪种意境更符合你",
+      "left_label": "人生就像一场旅行 不必在意目的地 在乎的是沿途的风景和看风景的心情",
+      "right_label": "人生需要树立目标并为之奋斗，专注人生目标的人往往无暇欣赏路途美景",
+      "answer_mapping": {
+        "1": "人生就像一场旅行 不必在意目的地 在乎的是沿途的风景和看风景的心情",
+        "0": "人生需要树立目标并为之奋斗，专注人生目标的人往往无暇欣赏路途美景",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set14",
+        "setA82",
+        "inactive"
+      ]
+    },
+    {
+      "number": 83,
+      "set": "set14",
+      "statement": "对我而言，解决问题本身就是一种乐趣",
+      "left_label": "是的",
+      "right_label": "比起解决问题，我更喜欢发现和体验美好的东西",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "比起解决问题，我更喜欢发现和体验美好的东西",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set14",
+        "setA83",
+        "inactive"
+      ]
+    },
+    {
+      "number": 84,
+      "set": "set14",
+      "statement": "喜欢推测、预测和分析",
+      "left_label": "是的",
+      "right_label": "这些对我而言都是浮云，我只想把握好当下",
+      "answer_mapping": {
+        "1": "是的",
+        "0": "这些对我而言都是浮云，我只想把握好当下",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set14",
+        "setA84",
+        "inactive"
+      ]
+    },
+    {
+      "number": 85,
+      "set": "set15",
+      "statement": "准备搭车远行时，哪种更符合你",
+      "left_label": "临行前才匆匆忙忙收拾，赶到车站车已经差不多要出发了...谁叫我是个慢性子呢",
+      "right_label": "早早收拾好行李，第二天提前很早就去到车站，发现你是第一个来候车的人",
+      "answer_mapping": {
+        "1": "临行前才匆匆忙忙收拾，赶到车站车已经差不多要出发了...谁叫我是个慢性子呢",
+        "0": "早早收拾好行李，第二天提前很早就去到车站，发现你是第一个来候车的人",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set15",
+        "setA85",
+        "inactive"
+      ]
+    },
+    {
+      "number": 86,
+      "set": "set15",
+      "statement": "马上能叫出五个朋友的名字",
+      "left_label": "不要说是5个，让我说出10个人也没问题呀",
+      "right_label": "突然让我叫出5个人的名字，想不起来呀！天啊，难道我朋友这么少吗",
+      "answer_mapping": {
+        "1": "不要说是5个，让我说出10个人也没问题呀",
+        "0": "突然让我叫出5个人的名字，想不起来呀！天啊，难道我朋友这么少吗",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set15",
+        "setA86",
+        "inactive"
+      ]
+    },
+    {
+      "number": 87,
+      "set": "set15",
+      "statement": "哪种更接近朋友对你的评价",
+      "left_label": "外表平静，大家都说我闷骚",
+      "right_label": "开朗活泼，大家都说我太聒噪了",
+      "answer_mapping": {
+        "1": "外表平静，大家都说我闷骚",
+        "0": "开朗活泼，大家都说我太聒噪了",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set15",
+        "setA87",
+        "inactive"
+      ]
+    },
+    {
+      "number": 88,
+      "set": "set15",
+      "statement": "周围的朋友们都说我是很冷静的人",
+      "left_label": "我说话做事比较冲动，并非一个冷静的人",
+      "right_label": "是，我的性格是孤言寡语，非常冷静",
+      "answer_mapping": {
+        "1": "我说话做事比较冲动，并非一个冷静的人",
+        "0": "是，我的性格是孤言寡语，非常冷静",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set15",
+        "setA88",
+        "inactive"
+      ]
+    },
+    {
+      "number": 89,
+      "set": "set15",
+      "statement": "你更擅长......",
+      "left_label": "运用逻辑、分析及批判性思维来解决问题",
+      "right_label": "运用人际关系解决问题",
+      "answer_mapping": {
+        "1": "运用逻辑、分析及批判性思维来解决问题",
+        "0": "运用人际关系解决问题",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set15",
+        "setA89",
+        "inactive"
+      ]
+    },
+    {
+      "number": 90,
+      "set": "set15",
+      "statement": "对周围人的变化很敏感",
+      "left_label": "是的，连朋友换个戒指也瞒不了我",
+      "right_label": "不，有时候对方换什么衣服都察觉不到",
+      "answer_mapping": {
+        "1": "是的，连朋友换个戒指也瞒不了我",
+        "0": "不，有时候对方换什么衣服都察觉不到",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set15",
+        "setA90",
+        "inactive"
+      ]
+    },
+    {
+      "number": 91,
+      "set": "set16",
+      "statement": "哪种更符合你",
+      "left_label": "凡事追求个性，完全凭自己的兴趣，没有固定的程式",
+      "right_label": "传统而保守，不喜欢标新立异",
+      "answer_mapping": {
+        "1": "凡事追求个性，完全凭自己的兴趣，没有固定的程式",
+        "0": "传统而保守，不喜欢标新立异",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set16",
+        "setA91",
+        "inactive"
+      ]
+    },
+    {
+      "number": 92,
+      "set": "set16",
+      "statement": "哪种更符合你",
+      "left_label": "过于抽象，因此在必要的后续行动上不切实际",
+      "right_label": "沉浸于细节，导致视野不开阔",
+      "answer_mapping": {
+        "1": "过于抽象，因此在必要的后续行动上不切实际",
+        "0": "沉浸于细节，导致视野不开阔",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set16",
+        "setA92",
+        "inactive"
+      ]
+    },
+    {
+      "number": 93,
+      "set": "set16",
+      "statement": "哪种更符合你",
+      "left_label": "喜欢惊喜，保留未知感",
+      "right_label": "不喜欢变化，追求稳定与踏实",
+      "answer_mapping": {
+        "1": "喜欢惊喜，保留未知感",
+        "0": "不喜欢变化，追求稳定与踏实",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set16",
+        "setA93",
+        "inactive"
+      ]
+    },
+    {
+      "number": 94,
+      "set": "set16",
+      "statement": "以下选项更适合我的：",
+      "left_label": "我会在内心不断地权衡利弊、计较得失后再展开行动",
+      "right_label": "一旦确认目标，我就会果断开始行动",
+      "answer_mapping": {
+        "1": "我会在内心不断地权衡利弊、计较得失后再展开行动",
+        "0": "一旦确认目标，我就会果断开始行动",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set16",
+        "setA94",
+        "inactive"
+      ]
+    },
+    {
+      "number": 95,
+      "set": "set16",
+      "statement": "以下选项更适合我的是：",
+      "left_label": "购买东西的时候，我会在不同的平台进行反复选择对比",
+      "right_label": "买东西的时候我一般都是看中了就买",
+      "answer_mapping": {
+        "1": "购买东西的时候，我会在不同的平台进行反复选择对比",
+        "0": "买东西的时候我一般都是看中了就买",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set16",
+        "setA95",
+        "inactive"
+      ]
+    },
+    {
+      "number": 96,
+      "set": "set16",
+      "statement": "以下选项更适合我的是：",
+      "left_label": "我相信自己的能力，不会因为别人的批评就开始怀疑自我",
+      "right_label": "在事后，我喜欢复盘反思，看看自己在哪些地方还有不足之处",
+      "answer_mapping": {
+        "1": "我相信自己的能力，不会因为别人的批评就开始怀疑自我",
+        "0": "在事后，我喜欢复盘反思，看看自己在哪些地方还有不足之处",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set16",
+        "setA96",
+        "inactive"
+      ]
+    },
+    {
+      "number": 97,
+      "set": "set17",
+      "statement": "以下选项更适合我的是：",
+      "left_label": "我是一个果敢的人，可以迅速作出选择",
+      "right_label": "我做事小心谨慎，时常会犹豫很久才能下决定",
+      "answer_mapping": {
+        "1": "我是一个果敢的人，可以迅速作出选择",
+        "0": "我做事小心谨慎，时常会犹豫很久才能下决定",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set17",
+        "setA97",
+        "inactive"
+      ]
+    },
+    {
+      "number": 98,
+      "set": "set17",
+      "statement": "以下选项更适合我的是：",
+      "left_label": "我有时会作出冲动性选择，行事鲁莽",
+      "right_label": "我有时会因为犹豫不决而错失良机",
+      "answer_mapping": {
+        "1": "我有时会作出冲动性选择，行事鲁莽",
+        "0": "我有时会因为犹豫不决而错失良机",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set17",
+        "setA98",
+        "inactive"
+      ]
+    },
+    {
+      "number": 99,
+      "set": "set17",
+      "statement": "以下选项更适合我的是：",
+      "left_label": "我很容易就能察觉到身旁人的需求，并对他们予以帮助",
+      "right_label": "说实话，我并不在乎与我无关的人或事",
+      "answer_mapping": {
+        "1": "我很容易就能察觉到身旁人的需求，并对他们予以帮助",
+        "0": "说实话，我并不在乎与我无关的人或事",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set17",
+        "setA99",
+        "inactive"
+      ]
+    },
+    {
+      "number": 100,
+      "set": "set17",
+      "statement": "以下选项更适合我的是：",
+      "left_label": "我的共情能力强，容易让人对我有亲切感",
+      "right_label": "很少有人能走进我的内心，他们觉得我有种距离感",
+      "answer_mapping": {
+        "1": "我的共情能力强，容易让人对我有亲切感",
+        "0": "很少有人能走进我的内心，他们觉得我有种距离感",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set17",
+        "setA100",
+        "inactive"
+      ]
+    },
+    {
+      "number": 101,
+      "set": "set17",
+      "statement": "以下选项更适合我的是：",
+      "left_label": "遇到事情的时候，我会向好友寻求建议或是安慰",
+      "right_label": "我不会轻易向其他人表达倾诉自己的心事，也不愿和人有过于亲密的关系",
+      "answer_mapping": {
+        "1": "遇到事情的时候，我会向好友寻求建议或是安慰",
+        "0": "我不会轻易向其他人表达倾诉自己的心事，也不愿和人有过于亲密的关系",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set17",
+        "setA101",
+        "inactive"
+      ]
+    },
+    {
+      "number": 102,
+      "set": "set17",
+      "statement": "以下选项更适合我的是：",
+      "left_label": "我是一个出色的倾听者，容易为别人的遭遇感到痛心",
+      "right_label": "当别人在倾诉自己的伤心事时，我的心里其实没有多大感觉",
+      "answer_mapping": {
+        "1": "我是一个出色的倾听者，容易为别人的遭遇感到痛心",
+        "0": "当别人在倾诉自己的伤心事时，我的心里其实没有多大感觉",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set17",
+        "setA102",
+        "inactive"
+      ]
+    },
+    {
+      "number": 103,
+      "set": "set18",
+      "statement": "以下选项更适合我的是：",
+      "left_label": "当我看到别人遇到困难时，我会希望能帮他们走出困境",
+      "right_label": "我难以对别人的处境感同身受，也不会主动提供帮助",
+      "answer_mapping": {
+        "1": "当我看到别人遇到困难时，我会希望能帮他们走出困境",
+        "0": "我难以对别人的处境感同身受，也不会主动提供帮助",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set18",
+        "setA103",
+        "inactive"
+      ]
+    },
+    {
+      "number": 104,
+      "set": "set18",
+      "statement": "你的性别：",
+      "left_label": "男",
+      "right_label": "女",
+      "answer_mapping": {
+        "1": "男",
+        "0": "女",
+        "scale": [
+          "strong_left",
+          "medium_left",
+          "slight_left",
+          "slight_right",
+          "medium_right",
+          "strong_right"
+        ]
+      },
+      "classes": [
+        "question-wrapper",
+        "set18",
+        "setA104",
+        "inactive"
+      ]
+    }
+  ]
+}

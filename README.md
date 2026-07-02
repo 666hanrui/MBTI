@@ -22,6 +22,62 @@
 - 通关结果；
 - 分享文案复制。
 
+## MBTI 前置测试逻辑
+
+仓库新增了 APESK 公开测试页的前置人格测试题目和可验证评分逻辑，作为后续「不知道自己类型就先测一下」的入口条件。
+
+它不是官方 APESK / MBTI 工具，也不要包装成专业心理测评。当前逻辑来自公开页面与公开报告结果的反向校验，适合做娱乐向类型分流。
+
+当前反推结论：
+
+- 公开测试页：`https://www.apesk.com/p/main0519.asp`
+- 前端公开了 104 个 `a1..a104` 二元答案。
+- `a104` 是性别题，不参与人格维度计分。
+- 服务器报告公开显示 6 组维度：
+  - `EI`：外向型 / 内向型，20 个计分项
+  - `SN`：直觉型 / 现实型，24 个计分项
+  - `TF`：逻辑型 / 感受型，23 个计分项
+  - `JP`：计划型 / 展望型，24 个计分项
+  - `AO`：果断型A / 纠结型O，7 题查表
+  - `HC`：高冷C / 温暖H，5 题查表
+- 平局规则已用公开报告校验：
+  - `EI` 50/50 时最终取 `I`
+  - `SN` 50/50 时最终取 `N`
+  - `JP` 50/50 时最终取 `P`
+
+关键文件：
+
+- `data/apeskLogic.json`：可直接用于本地评分的紧凑逻辑文件
+- `src/apeskScoring.mjs`：纯 JS 本地 scorer
+- `tests/apeskScoring.test.mjs`：本地单元测试
+- `analysis/apesk_scoring_map.md`：104 题 one-flip 反推表
+- `analysis/apesk_special_axes_map.md`：A/O 与 C/H 扩展轴穷举查表
+- `scripts/scrape_apesk_mbti.py`：抓取公开入口页和题目页
+- `scripts/probe_apesk_scoring.py`：逐题 one-flip 探测
+- `scripts/probe_apesk_special_axes.py`：扩展轴穷举探测
+- `scripts/build_apesk_logic.py`：把探测结果压成 `data/apeskLogic.json`
+- `scripts/validate_apesk_logic.mjs`：提交固定随机答案到公开接口，与本地 scorer 对照
+
+逻辑测试：
+
+```bash
+npm run test:logic
+```
+
+公开接口对照验证：
+
+```bash
+npm run validate:apesk
+```
+
+最近一次公开接口验证通过：
+
+- seed 7: `ESFJ-A-H`
+- seed 23: `INFJ-O-H`
+- seed 42: `INTJ-O-C`
+- seed 91: `INFP-A-C`
+- seed 2026: `ESFJ-A-C`
+
 ## 技术栈
 
 - React
@@ -135,4 +191,4 @@ docs/PROJECT_DOCUMENTATION.md
 
 ## 免责声明
 
-本站内容为娱乐向互动创作，不构成心理测评、情感建议或人格诊断。请勿将结果作为真实关系决策依据。
+本站内容为娱乐向互动创作，不构成心理测评、情感建议或人格诊断。请勿将结果作为真实关系决策依据。APESK 的服务端源码没有公开；本仓库中的前置测试逻辑不是复制服务端源码，而是基于公开表单与公开报告结果反推出的可运行评分逻辑。

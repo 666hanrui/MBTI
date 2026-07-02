@@ -1,0 +1,103 @@
+{
+  "source": "https://www.apesk.com/mbti/dati.asp",
+  "scraped_at": "2026-07-02T15:33:09.509687+00:00",
+  "title": "APESK瑞士荣格和基于迈尔斯-布里格斯性格分类法(Myers-Briggs Type Indicator)理论模型职业性格测试（非迫选模式比传统迫选MBTI理论更人性化）(量表版本:V2019-3.7)",
+  "options": [
+    {
+      "id": "tishu282",
+      "value": "28dan",
+      "checked": false,
+      "label": "28题无恋爱经历版"
+    },
+    {
+      "id": "tishu1",
+      "value": "28shuang",
+      "checked": false,
+      "label": "28题有恋爱经历版（恋爱场景单身慎入）"
+    },
+    {
+      "id": "tishu2",
+      "value": "93new",
+      "checked": false,
+      "label": "93题标准通用高频使用版"
+    },
+    {
+      "id": "tishu3",
+      "value": "93en",
+      "checked": false,
+      "label": "英文版"
+    },
+    {
+      "id": "tishu4",
+      "value": "93tw",
+      "checked": false,
+      "label": "繁体版"
+    },
+    {
+      "id": "tishu5",
+      "value": "mbti2",
+      "checked": false,
+      "label": "APESK荣格第二步(万亿种细分类型（2的50次方），地球上没有重复性格的两个人，大大提升了MBTI职业性格模型的精度和深度)"
+    },
+    {
+      "id": "gaokao1",
+      "value": "gaokao",
+      "checked": false,
+      "label": "高考专业选择版【该版本仅为高考后面临选择专业的同学设计。如果您不是面临专业选择的的同学，请选择其他理论版本】"
+    },
+    {
+      "id": "16p",
+      "value": "16p",
+      "checked": false,
+      "label": "16personalities非迫选版"
+    },
+    {
+      "id": "yanzheng",
+      "value": "yanzheng",
+      "checked": false,
+      "label": "情景佐证多重验证人格版"
+    },
+    {
+      "id": "chatu1",
+      "value": "chatu",
+      "checked": false,
+      "label": "漫画情景图文并茂版"
+    },
+    {
+      "id": "bawei",
+      "value": "bawei",
+      "checked": false,
+      "label": "荣格八维认知功能原版"
+    },
+    {
+      "id": "tishu6",
+      "value": "nfc",
+      "checked": true,
+      "label": "才储经典93题测试（64型高精度版）"
+    },
+    {
+      "id": "AI",
+      "value": "AI",
+      "checked": false,
+      "label": "APESK大模型加强版"
+    },
+    {
+      "id": "16mbti",
+      "value": "16mbti",
+      "checked": false,
+      "label": "动画版人格分布图测试(评价最有趣)"
+    },
+    {
+      "id": "16type",
+      "value": "16type",
+      "checked": false,
+      "label": "16type.com官网测试"
+    },
+    {
+      "id": "quickspeed",
+      "value": "quickspeed",
+      "checked": false,
+      "label": "最新极速测试（最快30秒确定类型）"
+    }
+  ]
+}
