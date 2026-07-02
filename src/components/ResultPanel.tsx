@@ -16,6 +16,8 @@ export function ResultPanel({ result, onRestart, onHome }: ResultPanelProps) {
     await navigator.clipboard.writeText(shareText);
   };
 
+  const isNarrativeEnding = Boolean(result.endingTitle);
+
   return (
     <section className="mx-auto flex min-h-screen w-full max-w-3xl items-center px-4 py-10">
       <div className={`w-full rounded-[2rem] border border-white/10 bg-gradient-to-br ${meta?.gradient ?? 'from-slate-800 to-slate-950'} p-6 shadow-danger md:p-8`}>
@@ -23,13 +25,22 @@ export function ResultPanel({ result, onRestart, onHome }: ResultPanelProps) {
 
         {result.isCleared ? (
           <>
-            <h1 className="mt-4 text-4xl font-black text-white md:text-6xl">通关成功</h1>
+            <h1 className="mt-4 text-4xl font-black text-white md:text-6xl">{result.endingTitle ?? '通关成功'}</h1>
             <p className="mt-4 text-lg leading-8 text-white/80">
-              你通关了「{result.title}」。系统判定：你没有急着证明自己，也没有把对方当成情绪交卷机。
+              {result.endingReport ?? `你通关了「${result.title}」。系统判定：你没有急着证明自己，也没有把对方当成情绪交卷机。`}
             </p>
             <div className="mt-6 rounded-3xl border border-white/10 bg-black/25 p-5">
-              <p className="text-sm text-white/50">通关等级</p>
-              <p className="mt-2 text-3xl font-black text-white">S：旧模式暂未复发</p>
+              <p className="text-sm text-white/50">系统评级</p>
+              <p className="mt-2 text-3xl font-black text-white">{result.grade ?? 'S：旧模式暂未复发'}</p>
+            </div>
+          </>
+        ) : isNarrativeEnding ? (
+          <>
+            <h1 className="mt-4 text-4xl font-black text-white md:text-6xl">{result.endingTitle}</h1>
+            <div className="mt-5 rounded-3xl border border-amber-300/20 bg-amber-500/10 p-5">
+              <p className="text-sm text-amber-100/70">结局报告</p>
+              <h2 className="mt-2 text-2xl font-black text-white">{result.grade ?? '残血结局'}</h2>
+              <p className="mt-4 text-base leading-8 text-white/80">{result.endingReport}</p>
             </div>
           </>
         ) : (
@@ -44,6 +55,19 @@ export function ResultPanel({ result, onRestart, onHome }: ResultPanelProps) {
           </>
         )}
 
+        {result.stateSummary?.length ? (
+          <div className="mt-6 rounded-3xl border border-white/10 bg-black/25 p-5">
+            <p className="text-sm text-white/50">系统识别出的旧模式</p>
+            <div className="mt-3 space-y-2">
+              {result.stateSummary.map((item) => (
+                <p key={item} className="rounded-2xl bg-white/[0.06] px-4 py-3 text-sm leading-6 text-white/75">
+                  {item}
+                </p>
+              ))}
+            </div>
+          </div>
+        ) : null}
+
         <div className="mt-6 rounded-3xl border border-white/10 bg-black/25 p-5">
           <p className="text-sm text-white/50">分享文案</p>
           <p className="mt-3 text-sm leading-7 text-white/80">{shareText}</p>
@@ -51,7 +75,7 @@ export function ResultPanel({ result, onRestart, onHome }: ResultPanelProps) {
 
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           <button type="button" onClick={onRestart} className="rounded-2xl bg-white px-4 py-3 text-sm font-black text-slate-950 hover:bg-white/85">
-            重新挑战
+            重开副本
           </button>
           <button type="button" onClick={handleCopy} className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-bold text-white hover:bg-white/15">
             复制文案
