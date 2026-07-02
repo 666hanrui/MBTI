@@ -106,12 +106,15 @@ export const buildClearResult = ({
 
 export const getShareText = (result: ChallengeResult) => {
   if (result.isCleared) {
-    return `我挑战了「${result.title}」，结局：${result.endingTitle ?? '通关成功'}。系统评级：${result.grade ?? 'S'}。你也来试试你会死在哪一关。`;
+    return `【赛博发疯战报】我成功拿下了「${result.title}」，结局：${result.endingTitle ?? '通关成功'} ✨！系统评级：${result.grade ?? 'S'}。这波操作我只能说：还有谁？！你也来测测情商余额够活几关吧 👾`;
   }
 
   if (result.endingTitle) {
-    return `我挑战了「${result.title}」，结局：${result.endingTitle}。系统说：${result.endingReport}`;
+    return `【赛博发疯战报】我在「${result.title}」苟到了最后，但结局是：${result.endingTitle} 💔。系统锐评：${result.endingReport} —— 终究是错付了，快来试试你能不能比我活得体面 🎭`;
   }
 
-  return `我挑战了「${result.title}」，死在第 ${result.level} 关：${result.deathTitle}。系统说：${result.deathReport}`;
+  return `【赛博发疯战报】我在「${result.title}」惨死在第 ${result.level} 关 💀！
+死因确诊：${result.deathTitle} 💥
+系统锐评：${result.deathReport}
+你也来试试会被 Boss 喷得多惨吧 🤡`;
 };

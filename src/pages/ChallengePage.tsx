@@ -1,7 +1,9 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChatBubble } from '../components/ChatBubble';
 import { OptionButton } from '../components/OptionButton';
-import { ProgressBar } from '../components/ProgressBar';
+import { ProgressBar, getSanityState } from '../components/ProgressBar';
+import { StickerSlam } from '../components/StickerSlam';
 import { getChallengeQuestions } from '../data/challenges';
 import { infjNarrativeQuestions } from '../data/infjNarrative';
 import { getPersonality } from '../data/personalities';
@@ -22,7 +24,6 @@ const getOutcome = (option: ChallengeOption) => {
 
 const getConditionalLines = (state: PlayerState, question: ReturnType<typeof getChallengeQuestions>[number]) => {
   if (!question.conditionalLines?.length) return [];
-
   return question.conditionalLines.filter((line) => {
     const flagMatched = line.whenFlags ? hasAllFlags(state, line.whenFlags) : true;
     const stateMatched = line.when
@@ -31,40 +32,111 @@ const getConditionalLines = (state: PlayerState, question: ReturnType<typeof get
           return value >= 0 ? current >= value : current <= value;
         })
       : true;
-
     return flagMatched && stateMatched;
   });
+};
+
+// Map damage stickers for slam effect
+const damageStickerMap: Record<string, string> = {
+  control: '/表情包/月薪喵050.gif',
+  avoidance: '/表情包/月薪喵020.gif',
+  self_proof: '/表情包/月薪喵051.gif',
+  defense: '/表情包/月薪喵156.gif',
+  savior: '/表情包/月薪喵087.gif',
+  default: '/表情包/月薪喵051.gif',
 };
 
 export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [feedback, setFeedback] = useState<ChoiceFeedback | null>(null);
   const [playerState, setPlayerState] = useState<PlayerState>(initialPlayerState);
+  const [damageCount, setDamageCount] = useState(0);
+  const [shakeClass, setShakeClass] = useState('');
+  const [showSlam, setShowSlam] = useState(false);
+  const [slamSticker, setSlamSticker] = useState('');
+  const [slamType, setSlamType] = useState<'damage' | 'heal'>('damage');
+  const [userMessage, setUserMessage] = useState<string | null>(null);
+  const chatEndRef = useRef<HTMLDivElement>(null);
 
   const personality = getPersonality(type);
   const questions = useMemo(() => (type === 'INFJ' ? infjNarrativeQuestions : getChallengeQuestions(type)), [type]);
   const question = questions[currentIndex];
   const isLastQuestion = currentIndex === questions.length - 1;
   const conditionalLines = getConditionalLines(playerState, question);
-  const isNarrativeMode = type === 'INFJ';
+  const sanity = useMemo(() => getSanityState(damageCount), [damageCount]);
+  const bossAvatar = '/表情包/月薪喵030.gif';
+
+  // Shuffle options so the correct answer isn't always C
+  const shuffledOptions = useMemo(() => {
+    const opts = [...question.options];
+    for (let i = opts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [opts[i], opts[j]] = [opts[j], opts[i]];
+    }
+    // Reassign A, B, C based on new order
+    return opts.map((opt, idx) => ({
+      ...opt,
+      id: String.fromCharCode(65 + idx) as 'A' | 'B' | 'C' | 'D'
+    }));
+  }, [currentIndex, question]);
+
+  const triggerShake = useCallback((intensity: 'light' | 'violent') => {
+    setShakeClass(intensity === 'violent' ? 'shake-violent' : 'shake-light');
+    setTimeout(() => setShakeClass(''), 700);
+  }, []);
+
+  const scrollToBottom = useCallback(() => {
+    setTimeout(() => chatEndRef.current?.scrollIntoView({ behavior: 'smooth' }), 200);
+  }, []);
 
   const handleChoose = (option: ChallengeOption) => {
     const outcome = getOutcome(option);
     const nextState = applyOptionToState(playerState, option);
 
+    // Show user's chosen message as a chat bubble
+    setUserMessage(option.text);
+    scrollToBottom();
+
     if (outcome === 'death') {
-      onResult(
-        buildDeathResult({
-          type,
-          title: personality?.title ?? `${type} 挑战`,
-          option,
-          level: question.level,
-          correctCount: currentIndex,
-          totalCount: questions.length,
-          state: nextState
-        })
-      );
+      // Death: violent shake + sticker slam
+      triggerShake('violent');
+      const stkr = damageStickerMap[option.pattern ?? 'default'] || damageStickerMap['default'];
+      setSlamSticker(stkr);
+      setSlamType('damage');
+      setTimeout(() => {
+        setShowSlam(true);
+      }, 600);
+      setTimeout(() => {
+        setShowSlam(false);
+        onResult(
+          buildDeathResult({
+            type,
+            title: personality?.title ?? `${type} 挑战`,
+            option,
+            level: question.level,
+            correctCount: currentIndex,
+            totalCount: questions.length,
+            state: nextState
+          })
+        );
+      }, 3200);
       return;
+    }
+
+    let feedbackDelay = 800;
+
+    if (outcome === 'damage') {
+      triggerShake('light');
+      setDamageCount(prev => prev + 1);
+    } else if (outcome === 'survive' && !isLastQuestion) {
+      // Positive feedback on correct answer
+      const positiveStickers = ['/表情包/月薪喵067.gif', '/表情包/月薪喵029.gif', '/表情包/月薪喵131.gif', '/表情包/月薪喵118.gif', '/表情包/月薪喵081.gif'];
+      const stkr = positiveStickers[Math.floor(Math.random() * positiveStickers.length)];
+      setSlamSticker(stkr);
+      setSlamType('heal');
+      feedbackDelay = 2200;
+      setTimeout(() => setShowSlam(true), 400);
+      setTimeout(() => setShowSlam(false), 2000);
     }
 
     const nextFeedback: ChoiceFeedback = {
@@ -78,104 +150,139 @@ export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
     setPlayerState(nextState);
 
     if (isLastQuestion) {
-      onResult(buildClearResult({ type, totalCount: questions.length, state: nextState }));
+      setTimeout(() => {
+        onResult(buildClearResult({ type, totalCount: questions.length, state: nextState }));
+      }, 1500);
       return;
     }
 
-    setFeedback(nextFeedback);
+    setTimeout(() => {
+      setFeedback(nextFeedback);
+      scrollToBottom();
+    }, feedbackDelay);
   };
 
   const handleNext = () => {
     setFeedback(null);
-    setCurrentIndex((value) => value + 1);
+    setUserMessage(null);
+    setCurrentIndex((v) => v + 1);
   };
 
+  const stageNames = ['破冰期', '破冰期', '破冰期', '刺痛期', '刺痛期', '刺痛期', '刺痛期', '高压期', '高压期', '高压期', '结算期', '结算期'];
+  const stageName = stageNames[currentIndex] ?? '未知';
+
   return (
-    <main className="min-h-screen px-4 py-8 text-white md:px-8">
-      <section className="mx-auto max-w-3xl">
-        <button type="button" onClick={onBack} className="mb-5 text-sm text-white/50 transition hover:text-white">
-          ← 返回副本大厅
-        </button>
+    <main className={`min-h-screen flex flex-col ${shakeClass}`} style={{ background: 'transparent' }}>
+      {/* WeChat-style header */}
+      <header className="sticky top-0 z-40 px-4 py-3 flex items-center gap-3" style={{ background: 'linear-gradient(180deg, rgba(20,20,35,0.98), rgba(15,15,25,0.95))', borderBottom: '1px solid rgba(255,255,255,0.06)', backdropFilter: 'blur(20px)' }}>
+        <button type="button" onClick={onBack} className="text-white/50 hover:text-white text-sm shrink-0">← 退出</button>
+        <div className="flex-1 min-w-0">
+          <ProgressBar current={question.level} total={questions.length} damageCount={damageCount} bossName={personality?.bossName ?? 'INFJ Boss'} />
+        </div>
+      </header>
 
-        <div className={`rounded-[2rem] border border-white/10 bg-gradient-to-br ${personality?.gradient ?? 'from-slate-800 to-slate-950'} p-5 shadow-glow md:p-8`}>
-          <div className="mb-6 flex items-start justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold tracking-[0.35em] text-white/45">{type} CHALLENGE</p>
-              <h1 className="mt-3 text-3xl font-black md:text-5xl">{personality?.title}</h1>
-              <p className="mt-2 text-sm text-white/55">Boss：{personality?.bossName}</p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-black/25 px-3 py-2 text-right text-xs text-white/60">
-              <p>{isNarrativeMode ? '记忆模式' : '通关率'}</p>
-              <p className="text-lg font-black text-white">{isNarrativeMode ? 'ON' : personality?.passRate}</p>
-            </div>
+      {/* Chat area */}
+      <div className="flex-1 overflow-y-auto px-4 py-5 space-y-4">
+        {/* Stage indicator */}
+        <div className="flex justify-center mb-4">
+          <div className="px-4 py-1.5 rounded-full text-[11px] text-white/40 bg-white/[0.04] border border-white/[0.06]">
+            第 {question.level} 关 · {question.title} · {stageName}
           </div>
+        </div>
 
-          <ProgressBar current={question.level} total={questions.length} />
-
-          {isNarrativeMode ? (
-            <div className="mt-5 grid grid-cols-3 gap-2 text-xs text-white/55">
-              <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                <p>共情</p>
-                <p className="mt-1 text-lg font-black text-white">{playerState.empathy}</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                <p>压迫</p>
-                <p className="mt-1 text-lg font-black text-white">{playerState.pressure}</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                <p>旧模式</p>
-                <p className="mt-1 text-lg font-black text-white">{playerState.oldPatternDetected}</p>
-              </div>
-            </div>
-          ) : null}
-
-          <div className="mt-8 rounded-3xl border border-white/10 bg-black/25 p-5">
-            <p className="text-sm text-white/45">第 {question.level} 关</p>
-            <h2 className="mt-2 text-2xl font-black">{question.title}</h2>
-            <p className="mt-3 text-sm leading-7 text-white/65">{question.scene}</p>
-
-            <div className="mt-6 space-y-3">
-              {question.messages.map((message, index) => (
-                <ChatBubble key={`${message.content}-${index}`} message={message} />
-              ))}
-            </div>
-
-            {conditionalLines.length ? (
-              <div className="mt-5 space-y-2">
-                {conditionalLines.map((line) => (
-                  <div key={line.content} className="rounded-2xl border border-violet-200/15 bg-violet-400/10 px-4 py-3 text-sm leading-6 text-violet-50/80">
-                    {line.content}
-                  </div>
-                ))}
-              </div>
-            ) : null}
+        {/* Scene description */}
+        <motion.div
+          key={`scene-${currentIndex}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="flex justify-center mb-2"
+        >
+          <div className="max-w-[90%] px-4 py-2.5 rounded-2xl text-xs leading-6 text-white/45 bg-white/[0.03] border border-white/[0.05] text-center">
+            📱 {question.scene}
           </div>
+        </motion.div>
 
-          <div className="mt-6">
-            <h3 className="text-lg font-black">{question.question}</h3>
-            <div className="mt-4 grid gap-3">
-              {question.options.map((option) => (
-                <OptionButton key={option.id} option={option} disabled={Boolean(feedback)} onChoose={handleChoose} />
-              ))}
+        {/* Conditional lines */}
+        {conditionalLines.map((line) => (
+          <motion.div key={line.content} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex justify-center">
+            <div className="max-w-[90%] px-4 py-2.5 rounded-2xl text-xs leading-6 border text-center"
+              style={{ color: '#a855f7', background: 'rgba(168, 85, 247, 0.08)', borderColor: 'rgba(168, 85, 247, 0.15)' }}
+            >
+              {line.content}
             </div>
-          </div>
+          </motion.div>
+        ))}
 
-          {feedback ? (
-            <div className={`mt-6 rounded-3xl border p-5 ${feedback.outcome === 'damage' ? 'border-amber-300/20 bg-amber-400/10' : 'border-emerald-300/20 bg-emerald-400/10'}`}>
-              <p className="text-sm font-bold text-white/80">{feedback.outcome === 'damage' ? '扣血存活' : feedback.outcome === 'hidden' ? '隐藏污染已记录' : '暂时存活'}</p>
-              <p className="mt-3 text-sm leading-7 text-white/75">{feedback.targetReaction}</p>
-              <div className="mt-4 rounded-2xl border border-white/10 bg-black/20 p-4">
-                <p className="text-xs text-white/45">系统记录</p>
-                <p className="mt-2 text-sm leading-7 text-white/75">{feedback.systemComment}</p>
-                {feedback.followUp ? <p className="mt-2 text-sm leading-7 text-white/55">{feedback.followUp}</p> : null}
+        {/* Chat messages */}
+        <AnimatePresence mode="wait">
+          <div key={`msgs-${currentIndex}`} className="space-y-3">
+            {question.messages.map((message, index) => (
+              <ChatBubble key={`${currentIndex}-${index}`} message={message} index={index} bossAvatar={bossAvatar} />
+            ))}
+          </div>
+        </AnimatePresence>
+
+        {/* User's chosen reply */}
+        {userMessage && (
+          <ChatBubble message={{ role: 'user', content: userMessage }} index={0} />
+        )}
+
+        {/* Feedback */}
+        {feedback && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-3"
+          >
+            {/* Target reaction */}
+            <ChatBubble message={{ role: 'target', content: feedback.targetReaction }} index={0} bossAvatar={bossAvatar} />
+
+            {/* System comment */}
+            <div className="flex justify-center">
+              <div className={`max-w-[90%] px-4 py-3 rounded-2xl text-xs leading-6 border text-center ${
+                feedback.outcome === 'damage'
+                  ? 'text-amber-200/80 bg-amber-500/[0.08] border-amber-500/15'
+                  : 'text-emerald-200/80 bg-emerald-500/[0.08] border-emerald-500/15'
+              }`}>
+                <span className="font-bold">{feedback.outcome === 'damage' ? '⚡ 扣血存活' : '✅ 暂时存活'}</span>
+                <br />
+                {feedback.systemComment}
               </div>
-              <button type="button" onClick={handleNext} className="mt-4 rounded-2xl bg-white px-5 py-3 text-sm font-black text-slate-950 hover:bg-white/85">
-                进入下一关
+            </div>
+
+            <div className="flex justify-center pt-2">
+              <button
+                type="button"
+                onClick={handleNext}
+                className="px-8 py-3 rounded-2xl text-sm font-black text-white transition-all hover:scale-[1.03] active:scale-[0.97]"
+                style={{ background: 'linear-gradient(135deg, #a855f7, #00f0ff)', boxShadow: '0 4px 30px rgba(168, 85, 247, 0.3)' }}
+              >
+                进入下一关 →
               </button>
             </div>
-          ) : null}
-        </div>
-      </section>
+          </motion.div>
+        )}
+
+        <div ref={chatEndRef} />
+      </div>
+
+      {/* Options bar (bottom) */}
+      {!feedback && !userMessage && (
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="sticky bottom-0 px-4 py-4 space-y-2"
+          style={{ background: 'linear-gradient(180deg, transparent, rgba(10,10,15,0.95) 30%)', paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
+        >
+          <p className="text-xs text-white/40 text-center mb-2 font-bold">💬 {question.question}</p>
+          {shuffledOptions.map((option) => (
+            <OptionButton key={option.id} option={option} disabled={Boolean(feedback)} onChoose={handleChoose} />
+          ))}
+        </motion.div>
+      )}
+
+      {/* Sticker Slam overlay */}
+      <StickerSlam show={showSlam} stickerSrc={slamSticker} mode={slamType} />
     </main>
   );
 }

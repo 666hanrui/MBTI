@@ -57,7 +57,10 @@ export type BehaviorPattern =
   | 'playful'
   | 'attack'
   | 'surrender'
-  | 'boundary';
+  | 'boundary'
+  | 'vulnerability'
+  | 'defense'
+  | 'savior';
 
 export interface PlayerState {
   empathy: number;
