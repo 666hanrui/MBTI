@@ -1,9 +1,29 @@
+export type PersonalityCode =
+  | 'INFJ'
+  | 'INTJ'
+  | 'INFP'
+  | 'INTP'
+  | 'ENFP'
+  | 'ENTP'
+  | 'ENFJ'
+  | 'ENTJ'
+  | 'ISFJ'
+  | 'ISTJ'
+  | 'ISFP'
+  | 'ISTP'
+  | 'ESFJ'
+  | 'ESTJ'
+  | 'ESFP'
+  | 'ESTP';
+
 export type PersonalityType = 'INFJ' | 'INTJ' | 'INFP' | 'ENTP';
 
 export type Difficulty = 'A' | 'S' | 'SS';
 
+export type ReleaseStatus = 'sample' | 'open' | 'preview' | 'hidden';
+
 export interface PersonalityMeta {
-  type: PersonalityType;
+  type: PersonalityCode;
   title: string;
   bossName: string;
   subtitle: string;
@@ -14,6 +34,10 @@ export interface PersonalityMeta {
   tags: string[];
   accent: string;
   gradient: string;
+  releaseStatus: ReleaseStatus;
+  statusLabel: string;
+  ctaLabel: string;
+  unlockHint?: string;
 }
 
 export interface ChatMessage {
