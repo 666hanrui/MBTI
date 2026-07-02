@@ -3,71 +3,71 @@ import type { ChallengeQuestion } from '../../types';
 export const infjQuestionTwo: ChallengeQuestion = {
   id: 'infj-narrative-2',
   level: 2,
-  title: 'TA 开始讲一点感受',
-  scene: 'TA 没有完全打开，但终于愿意露出一点真实情绪。INFJ 副本最危险的地方是：TA 说得越轻，里面越重。',
+  title: '她说不是这一顿饭',
+  scene: '她没有继续冷着，但也没有真的翻篇。她开始说得更具体一点。',
   messages: [
-    { role: 'target', content: '其实那天我真的有点难过。' },
-    { role: 'target', content: '不是因为那一句话，是那种感觉又来了。' }
+    { role: 'target', content: '我不是因为一顿饭。' },
+    { role: 'target', content: '是你每次都是最后才跟我说，我就只能自己消化。' }
   ],
   conditionalLines: [
-    { whenFlags: ['self_proof_seen'], content: '隐藏台词：TA 又补了一句：“我有点怕你又开始解释。”' },
-    { whenFlags: ['cold_space_pollution'], content: '隐藏台词：TA 说：“你刚才说不打扰，我其实不知道那是不是又一次冷掉。”' }
+    { whenFlags: ['self_proof_seen'], content: '她又补了一句：“我知道你有理由，但我现在真的不想再听一遍理由。”' },
+    { whenFlags: ['cold_space_pollution'], content: '她说：“你刚刚说不打扰，我也不知道你是体谅我，还是又准备冷掉。”' }
   ],
-  question: '这时你怎么接，才不会把门重新关上？',
+  question: '她说到这里，你怎么接？',
   options: [
     {
       id: 'A',
-      text: '我也很难过啊，你这样我压力也很大。',
-      outcome: 'damage',
-      pattern: 'self_proof',
-      effects: { selfProof: 2, damage: 1, oldPatternDetected: 1, emotionalSafety: -1 },
-      targetReaction: 'TA 的语气变轻了：“嗯，我知道你也不好受。”但那句话像退回礼貌区。',
-      systemComment: '系统识别：感受抢答。TA 刚递出一点感受，你立刻把自己的委屈放到桌面中央。',
-      followUp: '后续影响：如果证明欲累计过高，第 4 关会触发旧模式审判。',
-      deathTitle: '感受抢答',
-      deathReport: '你不是没有感受，你是太急着让 TA 看见你，于是又一次没看见 TA。',
-      deathRate: '36%',
-      addFlags: ['feeling_hijack']
-    },
-    {
-      id: 'B',
-      text: '我听见了。那种感觉是不是像你又被放在后面了？',
-      outcome: 'survive',
-      pattern: 'empathy',
-      effects: { empathy: 2, trust: 1, emotionalSafety: 2 },
-      targetReaction: 'TA 回得很慢：“差不多。就是那种……我又要自己消化的感觉。”',
-      systemComment: '系统识别：复述感受。你没有急着辩护，而是先确认 TA 的体验。',
-      followUp: '后续影响：情绪安全上升。下一关 TA 会更明确地提出边界。',
-      addFlags: ['named_the_feeling']
-    },
-    {
-      id: 'C',
-      text: '那你为什么当时不说？你不说我怎么知道？',
+      text: '那你当时也可以直接说啊，你不说我怎么知道？',
       outcome: 'death',
       pattern: 'pressure',
       effects: { pressure: 3, damage: 2, emotionalSafety: -3, oldPatternDetected: 2 },
-      targetReaction: 'TA 沉默了。那种刚打开一点的东西，被这句话重新收回去了。',
-      systemComment: '系统识别：二次审问。你把 TA 的迟到表达，也变成了 TA 的责任。',
-      followUp: '死亡条件触发：TA 不是不想沟通，是怕一沟通就被追责。',
-      deathTitle: '二次审问',
-      deathReport: '你以为你在了解原因，其实 TA 听见的是：连表达晚了都要被你审。门不是突然关的，是这样一次次关上的。',
+      targetReaction: '她沉默了一会儿，回：“算了。”',
+      systemComment: '这句话很真实，也很致命。她刚说出一点不舒服，你马上开始追责她为什么没早点说。',
+      followUp: '这一关死得很快：她不是来交作业的，她只是想让你知道那天她不好受。',
+      deathTitle: '把表达变成追责',
+      deathReport: '你问“你为什么不说”，听起来像在说：连难过得晚一点，都是她的问题。她本来只是想说感受，结果又变成她要解释自己。',
       deathRate: '28%',
       addFlags: ['second_interrogation']
     },
     {
+      id: 'B',
+      text: '我懂了，你不是气我忙，是觉得自己被晾在那儿了。',
+      outcome: 'survive',
+      pattern: 'empathy',
+      effects: { empathy: 2, trust: 1, emotionalSafety: 2 },
+      targetReaction: '她回：“差不多吧。就是那种感觉。”',
+      systemComment: '这句不华丽，但像是在认真听。你没有抢话，也没有急着洗白。',
+      followUp: '她不一定马上好，但至少没有继续往回缩。',
+      addFlags: ['named_the_feeling']
+    },
+    {
+      id: 'C',
+      text: '我知道你不开心，但我这几天也挺累的。',
+      outcome: 'damage',
+      pattern: 'self_proof',
+      effects: { selfProof: 2, damage: 1, oldPatternDetected: 1, emotionalSafety: -1 },
+      targetReaction: '她回：“嗯，你也累。”语气又客气起来了。',
+      systemComment: '这句话不是不能说，但现在说太早了。她刚把自己的不舒服拿出来，你马上把天平搬回你这边。',
+      followUp: '后面她会更容易觉得：讲到最后又要先照顾你的感受。',
+      deathTitle: '感受被抢走',
+      deathReport: '你不是没资格累，但这个时间点一说，话题就变成“你也不容易”。她会觉得自己刚开口，又要退回去。',
+      deathRate: '36%',
+      addFlags: ['feeling_hijack']
+    },
+    {
       id: 'D',
-      text: '对不起，都是我的错，你别难过了。',
+      text: '那我明天请你吃饭补回来，别不开心了。',
       outcome: 'hidden',
-      pattern: 'surrender',
+      pattern: 'avoidance',
       effects: { empathy: 1, trust: -1, damage: 1, oldPatternDetected: 1 },
-      targetReaction: 'TA 回：“我不是要你认罪。”空气反而更僵了一点。',
-      systemComment: '系统识别：无边界投降。你看起来在道歉，其实是在让 TA 负责结束你的愧疚。',
-      followUp: '隐藏污染：如果后续没有具体行动，这条线会变成“空头道歉”。',
-      deathTitle: '空头道歉',
-      deathReport: '你把道歉交得太快，快到 TA 没有地方放自己的感受。',
+      targetReaction: '她回：“不是吃饭的问题。”',
+      systemComment: '这句很像现实里会发的补救，但有点跳太快了。她讲的是被忽略，你给的是补偿。',
+      followUp: '这个选择不一定马上死，但后面如果你还一直想“哄过去”，她会更累。',
+      deathTitle: '拿补偿当修复',
+      deathReport: '奶茶、吃饭、礼物都能缓和气氛，但不能替代真正听懂。她不是缺一顿饭，是缺你别再把她的感受轻轻带过。',
       deathRate: '22%',
       addFlags: ['empty_apology']
     }
   ],
-  successText: '你活过了第二关。系统提示：TA 的感受不是谜题，是入口。'
+  successText: '这一关重点不是说多漂亮，而是别把她刚拿出来的感受又塞回去。'
 };
