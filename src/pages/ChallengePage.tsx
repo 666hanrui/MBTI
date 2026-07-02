@@ -3,9 +3,11 @@ import { ChatBubble } from '../components/ChatBubble';
 import { OptionButton } from '../components/OptionButton';
 import { ProgressBar } from '../components/ProgressBar';
 import { getChallengeQuestions } from '../data/challenges';
+import { infjNarrativeQuestions } from '../data/infjNarrative';
 import { getPersonality } from '../data/personalities';
-import type { ChallengeOption, ChallengeResult, PersonalityType } from '../types';
+import type { ChallengeOption, ChallengeResult, ChoiceFeedback, NumericPlayerState, PersonalityType, PlayerState } from '../types';
 import { buildClearResult, buildDeathResult } from '../utils/result';
+import { applyOptionToState, hasAllFlags, initialPlayerState } from '../utils/playerState';
 
 interface ChallengePageProps {
   type: PersonalityType;
@@ -13,17 +15,44 @@ interface ChallengePageProps {
   onResult: (result: ChallengeResult) => void;
 }
 
+const getOutcome = (option: ChallengeOption) => {
+  if (option.outcome) return option.outcome;
+  return option.isCorrect ? 'survive' : 'death';
+};
+
+const getConditionalLines = (state: PlayerState, question: ReturnType<typeof getChallengeQuestions>[number]) => {
+  if (!question.conditionalLines?.length) return [];
+
+  return question.conditionalLines.filter((line) => {
+    const flagMatched = line.whenFlags ? hasAllFlags(state, line.whenFlags) : true;
+    const stateMatched = line.when
+      ? (Object.entries(line.when) as Array<[keyof NumericPlayerState, number]>).every(([key, value]) => {
+          const current = state[key];
+          return value >= 0 ? current >= value : current <= value;
+        })
+      : true;
+
+    return flagMatched && stateMatched;
+  });
+};
+
 export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [successText, setSuccessText] = useState<string | null>(null);
+  const [feedback, setFeedback] = useState<ChoiceFeedback | null>(null);
+  const [playerState, setPlayerState] = useState<PlayerState>(initialPlayerState);
 
   const personality = getPersonality(type);
-  const questions = useMemo(() => getChallengeQuestions(type), [type]);
+  const questions = useMemo(() => (type === 'INFJ' ? infjNarrativeQuestions : getChallengeQuestions(type)), [type]);
   const question = questions[currentIndex];
   const isLastQuestion = currentIndex === questions.length - 1;
+  const conditionalLines = getConditionalLines(playerState, question);
+  const isNarrativeMode = type === 'INFJ';
 
   const handleChoose = (option: ChallengeOption) => {
-    if (!option.isCorrect) {
+    const outcome = getOutcome(option);
+    const nextState = applyOptionToState(playerState, option);
+
+    if (outcome === 'death') {
       onResult(
         buildDeathResult({
           type,
@@ -31,22 +60,33 @@ export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
           option,
           level: question.level,
           correctCount: currentIndex,
-          totalCount: questions.length
+          totalCount: questions.length,
+          state: nextState
         })
       );
       return;
     }
 
+    const nextFeedback: ChoiceFeedback = {
+      targetReaction: option.targetReaction ?? question.successText,
+      systemComment: option.systemComment ?? '系统识别：暂时存活。你没有踩中本关核心死亡点。',
+      followUp: option.followUp,
+      pattern: option.pattern,
+      outcome
+    };
+
+    setPlayerState(nextState);
+
     if (isLastQuestion) {
-      onResult(buildClearResult({ type, totalCount: questions.length }));
+      onResult(buildClearResult({ type, totalCount: questions.length, state: nextState }));
       return;
     }
 
-    setSuccessText(question.successText);
+    setFeedback(nextFeedback);
   };
 
   const handleNext = () => {
-    setSuccessText(null);
+    setFeedback(null);
     setCurrentIndex((value) => value + 1);
   };
 
@@ -65,12 +105,29 @@ export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
               <p className="mt-2 text-sm text-white/55">Boss：{personality?.bossName}</p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-black/25 px-3 py-2 text-right text-xs text-white/60">
-              <p>通关率</p>
-              <p className="text-lg font-black text-white">{personality?.passRate}</p>
+              <p>{isNarrativeMode ? '记忆模式' : '通关率'}</p>
+              <p className="text-lg font-black text-white">{isNarrativeMode ? 'ON' : personality?.passRate}</p>
             </div>
           </div>
 
           <ProgressBar current={question.level} total={questions.length} />
+
+          {isNarrativeMode ? (
+            <div className="mt-5 grid grid-cols-3 gap-2 text-xs text-white/55">
+              <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                <p>共情</p>
+                <p className="mt-1 text-lg font-black text-white">{playerState.empathy}</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                <p>压迫</p>
+                <p className="mt-1 text-lg font-black text-white">{playerState.pressure}</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                <p>旧模式</p>
+                <p className="mt-1 text-lg font-black text-white">{playerState.oldPatternDetected}</p>
+              </div>
+            </div>
+          ) : null}
 
           <div className="mt-8 rounded-3xl border border-white/10 bg-black/25 p-5">
             <p className="text-sm text-white/45">第 {question.level} 关</p>
@@ -82,21 +139,36 @@ export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
                 <ChatBubble key={`${message.content}-${index}`} message={message} />
               ))}
             </div>
+
+            {conditionalLines.length ? (
+              <div className="mt-5 space-y-2">
+                {conditionalLines.map((line) => (
+                  <div key={line.content} className="rounded-2xl border border-violet-200/15 bg-violet-400/10 px-4 py-3 text-sm leading-6 text-violet-50/80">
+                    {line.content}
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
 
           <div className="mt-6">
             <h3 className="text-lg font-black">{question.question}</h3>
             <div className="mt-4 grid gap-3">
               {question.options.map((option) => (
-                <OptionButton key={option.id} option={option} disabled={Boolean(successText)} onChoose={handleChoose} />
+                <OptionButton key={option.id} option={option} disabled={Boolean(feedback)} onChoose={handleChoose} />
               ))}
             </div>
           </div>
 
-          {successText ? (
-            <div className="mt-6 rounded-3xl border border-emerald-300/20 bg-emerald-400/10 p-5">
-              <p className="text-sm font-bold text-emerald-100/80">暂时存活</p>
-              <p className="mt-2 text-sm leading-7 text-white/75">{successText}</p>
+          {feedback ? (
+            <div className={`mt-6 rounded-3xl border p-5 ${feedback.outcome === 'damage' ? 'border-amber-300/20 bg-amber-400/10' : 'border-emerald-300/20 bg-emerald-400/10'}`}>
+              <p className="text-sm font-bold text-white/80">{feedback.outcome === 'damage' ? '扣血存活' : feedback.outcome === 'hidden' ? '隐藏污染已记录' : '暂时存活'}</p>
+              <p className="mt-3 text-sm leading-7 text-white/75">{feedback.targetReaction}</p>
+              <div className="mt-4 rounded-2xl border border-white/10 bg-black/20 p-4">
+                <p className="text-xs text-white/45">系统记录</p>
+                <p className="mt-2 text-sm leading-7 text-white/75">{feedback.systemComment}</p>
+                {feedback.followUp ? <p className="mt-2 text-sm leading-7 text-white/55">{feedback.followUp}</p> : null}
+              </div>
               <button type="button" onClick={handleNext} className="mt-4 rounded-2xl bg-white px-5 py-3 text-sm font-black text-slate-950 hover:bg-white/85">
                 进入下一关
               </button>
