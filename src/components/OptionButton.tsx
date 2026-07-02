@@ -8,10 +8,10 @@ interface OptionButtonProps {
 }
 
 const optionStickers: Record<string, string> = {
-  A: '/表情包/月薪喵032.gif',
-  B: '/表情包/月薪喵037.gif',
-  C: '/表情包/月薪喵120.gif',
-  D: '/表情包/月薪喵127.gif',
+  A: '/stickers/月薪喵032.gif',
+  B: '/stickers/月薪喵037.gif',
+  C: '/stickers/月薪喵120.gif',
+  D: '/stickers/月薪喵127.gif',
 };
 
 export function OptionButton({ option, disabled = false, onChoose }: OptionButtonProps) {

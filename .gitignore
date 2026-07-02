@@ -2,12 +2,15 @@ node_modules
 .DS_Store
 dist
 .vite
+.playwright-cli
+output
 .env
 .env.local
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+test-render.*
 
 表情包/
 *.txt

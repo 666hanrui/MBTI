@@ -18,42 +18,42 @@ export interface SanityState {
 
 export const getSanityState = (damageCount: number): SanityState => {
   if (damageCount <= 0) return {
-    sticker: '/表情包/月薪喵117.gif',
+    sticker: '/stickers/月薪喵117.gif',
     label: '理智清醒 · 得体微笑中',
     color: '#07c160',
     glowColor: 'rgba(7, 193, 96, 0.4)',
     barColor: 'linear-gradient(90deg, #07c160, #06ad56)',
   };
   if (damageCount === 1) return {
-    sticker: '/表情包/月薪喵092.gif',
+    sticker: '/stickers/月薪喵092.gif',
     label: '微微皱眉 · 你最好有合理解释',
     color: '#ffd000',
     glowColor: 'rgba(255, 208, 0, 0.4)',
     barColor: 'linear-gradient(90deg, #ffd000, #ff6b35)',
   };
   if (damageCount === 2) return {
-    sticker: '/表情包/月薪喵050.gif',
+    sticker: '/stickers/月薪喵050.gif',
     label: '逐渐暴躁 · 建议你想清楚再说',
     color: '#ff6b35',
     glowColor: 'rgba(255, 107, 53, 0.4)',
     barColor: 'linear-gradient(90deg, #ff6b35, #ff2d78)',
   };
   if (damageCount === 3) return {
-    sticker: '/表情包/月薪喵051.gif',
+    sticker: '/stickers/月薪喵051.gif',
     label: '委屈到变形 · 你怎么还在这',
     color: '#ff2d78',
     glowColor: 'rgba(255, 45, 120, 0.5)',
     barColor: 'linear-gradient(90deg, #ff2d78, #a855f7)',
   };
   if (damageCount === 4) return {
-    sticker: '/表情包/月薪喵156.gif',
+    sticker: '/stickers/月薪喵156.gif',
     label: '精神状态危险 · 请立即停止发言',
     color: '#a855f7',
     glowColor: 'rgba(168, 85, 247, 0.5)',
     barColor: 'linear-gradient(90deg, #a855f7, #ff2d78)',
   };
   return {
-    sticker: '/表情包/月薪喵020.gif',
+    sticker: '/stickers/月薪喵020.gif',
     label: '理智值归零 · 已对你启动 Door Slam',
     color: '#ff3b5c',
     glowColor: 'rgba(255, 59, 92, 0.6)',

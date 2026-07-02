@@ -59,7 +59,7 @@ export function ChatBubble({ message, index = 0, bossAvatar }: ChatBubbleProps) 
   }
 
   const isSticker = message.content.includes('表情包') || message.content.includes('猫猫');
-  const isImageSticker = message.content.startsWith('/表情包/');
+  const isImageSticker = message.content.startsWith('/stickers/');
 
   return (
     <motion.div

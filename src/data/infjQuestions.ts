@@ -7,7 +7,7 @@ export const infjQuestions: ChallengeQuestion[] = [
     title: '那个\u201C不用管我\u201D陷阱',
     scene: '你在追一个 INFJ。断联三天后你发了句\u201C最近还好吗\u201D，过了很久对方才回。',
     messages: [
-      { role: 'target', content: '/表情包/月薪喵146.gif' },
+      { role: 'target', content: '/stickers/月薪喵146.gif' },
       { role: 'target', content: '还行吧，就是最近加班加麻了。' },
       { role: 'target', content: '没事你不用管我，我习惯了一个人消化。' }
     ],
@@ -50,7 +50,7 @@ export const infjQuestions: ChallengeQuestion[] = [
     title: '鸽人哲学',
     scene: '暧昧期约了周末去看展，票你抢了半个月。周四晚上 TA 发来。',
     messages: [
-      { role: 'target', content: '/表情包/月薪喵020.gif' },
+      { role: 'target', content: '/stickers/月薪喵020.gif' },
       { role: 'target', content: '这周末可能去不了了，临时有点事。' },
       { role: 'target', content: '票钱我转你吧，真的不好意思。' }
     ],
@@ -135,7 +135,7 @@ export const infjQuestions: ChallengeQuestion[] = [
     title: '那个\u201C有人追我\u201D',
     scene: '你们处于暧昧期，没有确认关系。某天晚上 INFJ 突然发来。',
     messages: [
-      { role: 'target', content: '/表情包/月薪喵040.gif' },
+      { role: 'target', content: '/stickers/月薪喵040.gif' },
       { role: 'target', content: '今天有个同事跟我表白了。' },
       { role: 'target', content: '他说他默默注意我很久了，觉得我很特别。' }
     ],
@@ -220,7 +220,7 @@ export const infjQuestions: ChallengeQuestion[] = [
     title: '逃离计划',
     scene: '你们连续聊了一个多月，每天都在联系，感情持续升温。然后突然有一天。',
     messages: [
-      { role: 'target', content: '/表情包/月薪喵156.gif' },
+      { role: 'target', content: '/stickers/月薪喵156.gif' },
       { role: 'target', content: '我们还是别这样了。' },
       { role: 'target', content: '我最近太依赖你了，这样不正常。我本来一个人可以过的，现在被你打乱了。' },
       { role: 'target', content: '我想退回去。' }
@@ -430,7 +430,7 @@ export const infjQuestions: ChallengeQuestion[] = [
     title: '崩塌',
     scene: '你们终于走到一个节点。INFJ 在你面前彻底崩溃了。',
     messages: [
-      { role: 'target', content: '/表情包/月薪喵194.gif' },
+      { role: 'target', content: '/stickers/月薪喵194.gif' },
       { role: 'target', content: '我好怕\u2026\u2026我真的好怕。' },
       { role: 'target', content: '我每天都在做准备，准备你哪天突然就不喜欢我了。我每天都在想那个时候我该怎么办。' },
       { role: 'target', content: '我一直觉得，与其等你走，不如我先走\u2026\u2026' },

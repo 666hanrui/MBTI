@@ -35,13 +35,13 @@ const getRandomCaption = (captions: string[]) => captions[Math.floor(Math.random
 
 const getResultSticker = (result: ChallengeResult): string => {
   if (result.isCleared) {
-    if (result.grade?.includes('SS')) return '/表情包/月薪喵131.gif';
-    if (result.grade?.includes('S')) return '/表情包/月薪喵067.gif';
-    return '/表情包/月薪喵029.gif';
+    if (result.grade?.includes('SS')) return '/stickers/月薪喵131.gif';
+    if (result.grade?.includes('S')) return '/stickers/月薪喵067.gif';
+    return '/stickers/月薪喵029.gif';
   }
-  if (result.level <= 2) return '/表情包/月薪喵020.gif';
-  if (result.level <= 5) return '/表情包/月薪喵051.gif';
-  return '/表情包/月薪喵156.gif';
+  if (result.level <= 2) return '/stickers/月薪喵020.gif';
+  if (result.level <= 5) return '/stickers/月薪喵051.gif';
+  return '/stickers/月薪喵156.gif';
 };
 
 export function ResultPanel({ result, onRestart, onHome }: ResultPanelProps) {

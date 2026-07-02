@@ -16,7 +16,7 @@ export type PersonalityCode =
   | 'ESFP'
   | 'ESTP';
 
-export type PersonalityType = 'INFJ' | 'INTJ' | 'INFP' | 'ENTP';
+export type PersonalityType = PersonalityCode;
 
 export type Difficulty = 'A' | 'S' | 'SS';
 

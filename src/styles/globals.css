@@ -6,7 +6,7 @@
 
 :root {
   color-scheme: dark;
-  --font-main: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-main: "LXGW WenKai Screen", 'Nunito', ui-rounded, 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --bg-deep: #0a0a0f;
   --bg-card: rgba(18, 18, 28, 0.85);
   --neon-pink: #ff2d78;

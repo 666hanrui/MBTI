@@ -38,12 +38,12 @@ const getConditionalLines = (state: PlayerState, question: ReturnType<typeof get
 
 // Map damage stickers for slam effect
 const damageStickerMap: Record<string, string> = {
-  control: '/表情包/月薪喵050.gif',
-  avoidance: '/表情包/月薪喵020.gif',
-  self_proof: '/表情包/月薪喵051.gif',
-  defense: '/表情包/月薪喵156.gif',
-  savior: '/表情包/月薪喵087.gif',
-  default: '/表情包/月薪喵051.gif',
+  control: '/stickers/月薪喵050.gif',
+  avoidance: '/stickers/月薪喵020.gif',
+  self_proof: '/stickers/月薪喵051.gif',
+  defense: '/stickers/月薪喵156.gif',
+  savior: '/stickers/月薪喵087.gif',
+  default: '/stickers/月薪喵051.gif',
 };
 
 export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
@@ -60,11 +60,24 @@ export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
 
   const personality = getPersonality(type);
   const questions = useMemo(() => (type === 'INFJ' ? infjNarrativeQuestions : getChallengeQuestions(type)), [type]);
+
+  if (!questions || questions.length === 0) {
+    return (
+      <main className="min-h-screen flex flex-col items-center justify-center p-6 bg-zinc-950 text-white text-center space-y-6">
+        <h1 className="text-4xl font-black text-red-500">404 NOT FOUND</h1>
+        <p className="text-zinc-400">「{personality?.bossName || type}」副本还在紧急施工中，<br/>先去隔壁挑战其他受害者吧。</p>
+        <button onClick={onBack} className="px-6 py-2 rounded-full border border-zinc-700 hover:bg-zinc-800 transition">
+          返回主页
+        </button>
+      </main>
+    );
+  }
+
   const question = questions[currentIndex];
   const isLastQuestion = currentIndex === questions.length - 1;
   const conditionalLines = getConditionalLines(playerState, question);
   const sanity = useMemo(() => getSanityState(damageCount), [damageCount]);
-  const bossAvatar = '/表情包/月薪喵030.gif';
+  const bossAvatar = '/stickers/月薪喵030.gif';
 
   // Shuffle options so the correct answer isn't always C
   const shuffledOptions = useMemo(() => {
@@ -130,7 +143,7 @@ export function ChallengePage({ type, onBack, onResult }: ChallengePageProps) {
       setDamageCount(prev => prev + 1);
     } else if (outcome === 'survive' && !isLastQuestion) {
       // Positive feedback on correct answer
-      const positiveStickers = ['/表情包/月薪喵067.gif', '/表情包/月薪喵029.gif', '/表情包/月薪喵131.gif', '/表情包/月薪喵118.gif', '/表情包/月薪喵081.gif'];
+      const positiveStickers = ['/stickers/月薪喵067.gif', '/stickers/月薪喵029.gif', '/stickers/月薪喵131.gif', '/stickers/月薪喵118.gif', '/stickers/月薪喵081.gif'];
       const stkr = positiveStickers[Math.floor(Math.random() * positiveStickers.length)];
       setSlamSticker(stkr);
       setSlamType('heal');
