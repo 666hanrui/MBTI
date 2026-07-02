@@ -3,71 +3,71 @@ import type { ChallengeQuestion } from '../../types';
 export const infjQuestionThree: ChallengeQuestion = {
   id: 'infj-narrative-3',
   level: 3,
-  title: 'TA 要一点空间',
-  scene: '对话刚有一点缓和，TA 没有继续讲下去，而是提出想暂停。这里开始考验你是不是真的尊重边界。',
+  title: '她说今天先算了',
+  scene: '你们聊了几句，她没有继续往下说。不是突然消失，就是很明显不想再聊了。',
   messages: [
-    { role: 'target', content: '我想自己待一会儿。' },
-    { role: 'target', content: '不是不理你，我只是现在有点累。' }
+    { role: 'target', content: '今天先算了吧。' },
+    { role: 'target', content: '我有点累，想早点睡。' }
   ],
   conditionalLines: [
-    { whenFlags: ['feeling_hijack'], content: '隐藏台词：TA 说：“我刚才说完以后，感觉又变成我要照顾你的情绪。”' },
-    { whenFlags: ['named_the_feeling'], content: '隐藏台词：TA 说：“谢谢你刚才没有急着反驳。”' }
+    { whenFlags: ['feeling_hijack'], content: '她又说：“我刚说完，好像又变成我要照顾你的情绪了。”' },
+    { whenFlags: ['named_the_feeling'], content: '她补了一句：“刚刚你那样说，我是有听进去的。”' }
   ],
-  question: 'TA 要空间时，你怎么处理？',
+  question: '她要停一下，你怎么回？',
   options: [
     {
       id: 'A',
-      text: '那你到底还要不要继续？你给我一个准话。',
+      text: '那你到底还要不要继续？你别一直这样吊着我。',
       outcome: 'death',
       pattern: 'pressure',
       effects: { pressure: 3, damage: 2, boundaryRespect: -2, emotionalSafety: -3 },
-      targetReaction: 'TA 很久没有回复。你看着那行消息，突然意识到你把“休息”逼成了“判决”。',
-      systemComment: '系统识别：安全感勒索。你把 TA 的喘息请求翻译成关系审判。',
-      followUp: '死亡条件触发：INFJ 要的不是被困在你的不安里。',
-      deathTitle: '安全感勒索',
-      deathReport: 'TA 要的是喘气，你递过去的是一张考卷。你不是在确认关系，你是在让 TA 为你的恐惧负责。',
+      targetReaction: '她回：“我只是说我累了。”然后就没再回。',
+      systemComment: '这句话像很多真实争吵里的崩盘点：对方说累，你听成了关系判决。',
+      followUp: '你不是在确认关系，你是在要求她现在立刻处理你的不安。',
+      deathTitle: '把暂停逼成表态',
+      deathReport: '她说想休息，不等于她在吊着你。你一追问，她会觉得连停一下都不安全。',
       deathRate: '41%',
       addFlags: ['security_extortion']
     },
     {
       id: 'B',
-      text: '好。我晚点再找你，这段时间我不会继续追问。',
+      text: '好，那你先睡。我不继续发了，明天你方便的时候再说。',
       outcome: 'survive',
       pattern: 'boundary',
       effects: { boundaryRespect: 2, trust: 1, emotionalSafety: 1, pressure: -1 },
-      targetReaction: 'TA 回：“嗯，谢谢。”只有两个字，但紧绷感明显低了一点。',
-      systemComment: '系统识别：边界尊重。你给了空间，也没有把空间变成惩罚。',
-      followUp: '后续影响：边界尊重上升。第 5 关有机会触发观察期结局。',
+      targetReaction: '她回：“嗯。”过了一会儿又补了句：“晚安。”',
+      systemComment: '这句很普通，但舒服。没有表演理解，也没有继续追问。',
+      followUp: '她要停，你就真的停。这个细节比很多长篇大论更有用。',
       addFlags: ['respected_space']
     },
     {
       id: 'C',
-      text: '好，我不逼你。但我想最后说几句，你看不看都行。',
+      text: '好，最后一句，我真的不是想让你难受。',
       outcome: 'damage',
       pattern: 'self_proof',
       effects: { selfProof: 2, boundaryRespect: -1, oldPatternDetected: 1, damage: 1 },
-      targetReaction: '你发出去以后才发现，“最后几句”其实有一整屏。TA 没有回。',
-      systemComment: '系统识别：伪尊重。你尊重的是台词，不是边界。',
-      followUp: '后续影响：触发“边界失效”标记。后面 TA 可能直接指出你说给空间却没有做到。',
-      deathTitle: '伪尊重',
-      deathReport: '你说不逼，但消息已经替你逼完了。TA 要安静，你给的是倒计时。',
+      targetReaction: '你发完“最后一句”以后，又忍不住补了两句。她没回。',
+      systemComment: '这太像真实聊天了：说最后一句，结果最后了半天。',
+      followUp: '她要的是停下，你给的是继续解释，只是包装得温柔一点。',
+      deathTitle: '最后一句没完没了',
+      deathReport: '你不是故意压她，但你停不下来。INFJ 很容易在这种时候觉得：连一点安静都要靠她自己争取。',
       deathRate: '33%',
       addFlags: ['fake_boundary']
     },
     {
       id: 'D',
-      text: '行，那我也消失几天。你想清楚再说。',
+      text: '行，那我也不找你了，你自己想清楚吧。',
       outcome: 'hidden',
       pattern: 'avoidance',
       effects: { avoidance: 2, control: 1, boundaryRespect: -2, trust: -1, damage: 1 },
-      targetReaction: 'TA 没再回复。表面上你们都安静了，但这不是空间，是冷战预告。',
-      systemComment: '系统识别：惩罚性撤退。你把边界变成了博弈。',
-      followUp: '隐藏污染：如果后续再索要回应，会触发“你先消失又怪 TA 不靠近”的死亡报告。',
-      deathTitle: '惩罚性撤退',
-      deathReport: '你不是给空间，你是在用消失测试 TA 会不会追。INFJ 副本最怕这种安静里的惩罚感。',
+      targetReaction: '她没回。你们都安静了，但这个安静一点也不轻松。',
+      systemComment: '这句像给空间，其实带着点赌气。',
+      followUp: '后面她可能会觉得：你不是尊重她休息，你是在等她低头。',
+      deathTitle: '赌气式消失',
+      deathReport: '你想让她自己想清楚，但这句话听起来像“你不哄我，我也不理你”。这不是空间，是冷战预告。',
       deathRate: '18%',
       addFlags: ['punitive_withdrawal']
     }
   ],
-  successText: '你活过了第三关。系统提示：边界不是撤退，是让关系不继续受伤。'
+  successText: '这一关的关键很简单：她说停，你就真的停。别把体贴说得太满。'
 };
