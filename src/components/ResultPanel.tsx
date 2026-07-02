@@ -8,9 +8,29 @@ interface ResultPanelProps {
   onHome: () => void;
 }
 
+const recommendationMap: Record<string, { title: string; reason: string }> = {
+  INFJ: {
+    title: '系统推荐：破解 INTJ 防火墙',
+    reason: '你刚经历了“感受被接住”的审判。下一站可以试试完全不同的冷启动系统：别卖惨，交方案。'
+  },
+  INTJ: {
+    title: '系统推荐：别被 ENTP 反杀',
+    reason: '你刚过完风险评估，现在去一个不按流程出牌的副本，看看你的逻辑会不会被当场拆掉。'
+  },
+  INFP: {
+    title: '系统推荐：挽回 INFJ 挑战',
+    reason: '旧梦和旧伤是亲戚。你可以去 INFJ 样板副本里看看“被接住”到底有多难。'
+  },
+  ENTP: {
+    title: '系统推荐：修复 INFP 旧梦',
+    reason: '你刚从反杀局出来，建议去一个不能靠抖机灵通关的副本冷静一下。'
+  }
+};
+
 export function ResultPanel({ result, onRestart, onHome }: ResultPanelProps) {
   const meta = getPersonality(result.type);
   const shareText = getShareText(result);
+  const recommendation = recommendationMap[result.type];
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(shareText);
@@ -57,7 +77,10 @@ export function ResultPanel({ result, onRestart, onHome }: ResultPanelProps) {
 
         {result.stateSummary?.length ? (
           <div className="mt-6 rounded-3xl border border-white/10 bg-black/25 p-5">
-            <p className="text-sm text-white/50">系统识别出的旧模式</p>
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-sm text-white/50">完整死亡档案</p>
+              <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs text-white/50">已解锁</span>
+            </div>
             <div className="mt-3 space-y-2">
               {result.stateSummary.map((item) => (
                 <p key={item} className="rounded-2xl bg-white/[0.06] px-4 py-3 text-sm leading-6 text-white/75">
@@ -65,6 +88,17 @@ export function ResultPanel({ result, onRestart, onHome }: ResultPanelProps) {
                 </p>
               ))}
             </div>
+          </div>
+        ) : null}
+
+        {recommendation ? (
+          <div className="mt-6 rounded-3xl border border-violet-200/15 bg-violet-400/10 p-5">
+            <p className="text-sm text-violet-100/60">副本推荐已解锁</p>
+            <h3 className="mt-2 text-2xl font-black text-white">{recommendation.title}</h3>
+            <p className="mt-3 text-sm leading-7 text-white/70">{recommendation.reason}</p>
+            <button type="button" onClick={onHome} className="mt-4 rounded-2xl bg-white px-5 py-3 text-sm font-black text-slate-950 hover:bg-white/85">
+              回大厅查看推荐副本
+            </button>
           </div>
         ) : null}
 
