@@ -1,20 +1,26 @@
 import { motion } from 'framer-motion';
-import type { PersonalityMeta } from '../types';
+import type { PersonalityCode, PersonalityMeta, PersonalityType } from '../types';
 
 interface PersonalityCardProps {
   personality: PersonalityMeta;
-  onStart: (type: PersonalityMeta['type']) => void;
+  onStart: (type: PersonalityType) => void;
+  onPreview: (type: PersonalityCode) => void;
 }
 
-export function PersonalityCard({ personality, onStart }: PersonalityCardProps) {
+const playableStatuses = ['sample', 'open'];
+
+export function PersonalityCard({ personality, onStart, onPreview }: PersonalityCardProps) {
+  const isPlayable = playableStatuses.includes(personality.releaseStatus);
+  const isSample = personality.releaseStatus === 'sample';
+
   return (
     <motion.article
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-      className={`relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br ${personality.gradient} p-5 shadow-glow`}
+      className={`relative overflow-hidden rounded-[2rem] border ${isPlayable ? 'border-white/10 shadow-glow' : 'border-white/5 opacity-85'} bg-gradient-to-br ${personality.gradient} p-5`}
     >
       <div className="absolute right-4 top-4 rounded-full border border-white/10 bg-black/25 px-3 py-1 text-xs text-white/70">
-        难度 {personality.difficulty}
+        {personality.statusLabel}
       </div>
 
       <div className="mb-8">
@@ -36,8 +42,8 @@ export function PersonalityCard({ personality, onStart }: PersonalityCardProps) 
 
       <div className="mt-8 grid grid-cols-2 gap-3 text-sm">
         <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-          <p className="text-white/45">通关率</p>
-          <p className="mt-1 text-xl font-black text-white">{personality.passRate}</p>
+          <p className="text-white/45">难度</p>
+          <p className="mt-1 text-xl font-black text-white">{personality.difficulty}</p>
         </div>
         <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
           <p className="text-white/45">平均死亡</p>
@@ -45,12 +51,20 @@ export function PersonalityCard({ personality, onStart }: PersonalityCardProps) 
         </div>
       </div>
 
+      {personality.unlockHint ? (
+        <p className="mt-4 rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-xs leading-5 text-white/55">
+          {personality.unlockHint}
+        </p>
+      ) : null}
+
       <button
         type="button"
-        onClick={() => onStart(personality.type)}
-        className="mt-6 w-full rounded-2xl bg-white px-4 py-3 text-sm font-black text-slate-950 transition hover:bg-white/85"
+        onClick={() => (isPlayable ? onStart(personality.type as PersonalityType) : onPreview(personality.type))}
+        className={`mt-6 w-full rounded-2xl px-4 py-3 text-sm font-black transition ${
+          isPlayable ? 'bg-white text-slate-950 hover:bg-white/85' : 'border border-white/15 bg-white/10 text-white hover:bg-white/15'
+        }`}
       >
-        开始挑战
+        {isSample ? '进入样板副本' : personality.ctaLabel}
       </button>
     </motion.article>
   );
