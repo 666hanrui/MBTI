@@ -8,12 +8,20 @@
 
 当前 MVP 已包含 4 个首发人格副本：
 
-- **INFJ：挽回 INFJ 挑战**
+- **INFJ：挽回 INFJ 挑战**（已升级为叙事样板副本）
 - **INTJ：破解 INTJ 防火墙**
 - **INFP：修复 INFP 旧梦**
 - **ENTP：别被 ENTP 反杀**
 
-每个副本目前包含：
+INFJ 当前已包含：
+
+- 5 关连续剧情主线；
+- 选择后即时反馈：TA 的反应、系统识别、后续影响；
+- 状态变量：共情、压迫、证明欲、信任、损伤、边界尊重等；
+- 隐藏 flag：前面选项会影响后续台词；
+- 多结局：即死、残血、普通通关、观察期、隐藏通关。
+
+其他人格目前仍保持简单 MVP 玩法：
 
 - 4 个关系场景关卡；
 - 4 个选项；
@@ -111,6 +119,9 @@ npm run preview
 MBTI/
   docs/
     PROJECT_DOCUMENTATION.md
+    GAME_DESIGN_BIBLE.md
+    STEREOTYPE_RESEARCH_FRAMEWORK.md
+    INFJ_NARRATIVE_SCRIPT.md
   src/
     components/
       ChatBubble.tsx
@@ -120,6 +131,7 @@ MBTI/
       ResultPanel.tsx
     data/
       challenges.ts
+      infjNarrative.ts
       personalities.ts
     pages/
       ChallengePage.tsx
@@ -128,6 +140,7 @@ MBTI/
     styles/
       globals.css
     utils/
+      playerState.ts
       result.ts
     App.tsx
     main.tsx
@@ -145,19 +158,25 @@ MBTI/
   ↓
 选择回应方式
   ↓
-选错：进入死亡报告
-选对：进入下一关
+INFJ：系统记录变量、flag 和旧模式
+其他人格：选错死亡，选对进入下一关
   ↓
-全部通过：生成通关结果
+生成死亡报告 / 残血结局 / 通关结局
 ```
 
 ## 内容扩展方式
 
-新增人格或关卡主要改两个文件：
+新增普通人格或关卡主要改两个文件：
 
 ```text
 src/data/personalities.ts
 src/data/challenges.ts
+```
+
+升级为叙事副本时，建议单独建立对应文件：
+
+```text
+src/data/<type>Narrative.ts
 ```
 
 `personalities.ts` 负责人格卡片信息：
@@ -170,16 +189,15 @@ src/data/challenges.ts
 - 标签；
 - 视觉渐变。
 
-`challenges.ts` 负责题目内容：
+普通 `challenges.ts` 负责基础题目内容；叙事副本题目额外支持：
 
-- 场景；
-- 聊天气泡；
-- 问题；
-- 四个选项；
-- 正确答案；
-- 死亡标题；
-- 死亡报告；
-- 死亡率。
+- outcome：death / survive / damage / hidden；
+- pattern：玩家行为模式；
+- effects：变量变化；
+- targetReaction：TA 的即时反应；
+- systemComment：系统识别；
+- followUp：后续影响；
+- addFlags：隐藏标记。
 
 ## 项目文档
 
@@ -187,6 +205,9 @@ src/data/challenges.ts
 
 ```text
 docs/PROJECT_DOCUMENTATION.md
+docs/GAME_DESIGN_BIBLE.md
+docs/STEREOTYPE_RESEARCH_FRAMEWORK.md
+docs/INFJ_NARRATIVE_SCRIPT.md
 ```
 
 ## 免责声明
