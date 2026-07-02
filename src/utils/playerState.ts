@@ -37,13 +37,13 @@ export const hasAllFlags = (state: PlayerState, flags: string[] = []) =>
 export const getStateSummary = (state: PlayerState) => {
   const summary: string[] = [];
 
-  if (state.selfProof >= 2) summary.push('证明欲偏高：你很容易把修复变成自证清白。');
-  if (state.pressure >= 2) summary.push('压迫感偏高：你容易把 TA 的沉默当成必须立刻交卷。');
-  if (state.boundaryRespect >= 2) summary.push('边界尊重较好：你能给空间，而不是用空间惩罚对方。');
-  if (state.empathy >= 3) summary.push('共情值较高：你开始先接住感受，再处理问题。');
-  if (state.oldPatternDetected >= 2) summary.push('旧模式被识别：系统已经多次捕捉到熟悉循环。');
-  if (state.trust >= 3) summary.push('信任修复中：TA 没有立刻回来，但门没有继续关死。');
-  if (state.damage >= 3) summary.push('关系损伤偏高：你活着通关，也可能只是残血。');
+  if (state.selfProof >= 2) summary.push('你这次比较急着解释自己，所以有几句话会显得像在辩解。');
+  if (state.pressure >= 2) summary.push('你有点急着要答案，容易让对方觉得连休息一下都不安全。');
+  if (state.boundaryRespect >= 2) summary.push('你有几次真的停住了，没有继续追着发消息。');
+  if (state.empathy >= 3) summary.push('你不是只在讲道理，也有在听她到底难受在哪里。');
+  if (state.oldPatternDetected >= 2) summary.push('你有几次又回到了熟悉的处理方式：先解释、再补救、最后希望快点翻篇。');
+  if (state.trust >= 3) summary.push('她没有马上变好，但至少没有把话彻底说死。');
+  if (state.damage >= 3) summary.push('这一路聊下来还是有点伤，能走到最后也不代表真的修好了。');
 
-  return summary.length ? summary : ['系统暂未识别出明显旧模式，但这也可能只是你暂时装得不错。'];
+  return summary.length ? summary : ['这次没有特别明显的翻车点，但也还没到能让人完全放心的程度。'];
 };
